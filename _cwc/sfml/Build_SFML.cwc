@@ -1,0 +1,24 @@
+-{vFlag}=""
+;-D_PLATFORM_WINDOWS
+>
+-{pObj}:=obj/cpp_{_sPlatform}_{_sOpt}/
+>
+-{pSFML}=../../SFML-2.5.1/
+>
+-{pSFML_src}={pSFML}src/SFML/
+>
+-{vIncl}=
+-I {pSFML}include/
+-I {pSFML}src/
+>
+-{vFlag}=
+-DUNICODE
+>
+-c {pSFML_src}Window/Win32/ -o {pObj}SFML/Window/Win32/
+-{vIncl}
+-{vFlag}
+>
+-c &{pSFML_src}Window/ -o {pObj}SFML/Window/
+-{vIncl}
+-{vFlag}
+>

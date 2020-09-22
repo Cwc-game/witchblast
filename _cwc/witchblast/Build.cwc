@@ -1,0 +1,22 @@
+-{vFlag}=""
+>
+-{pObj}:=obj/cpp_{_sPlatform}_{_sOpt}/
+>
+-#Run "../sfml/Build_SFML.cwc"
+>
+-{pSrc}=../../src/
+-{pMedia}=../../media/
+-{pData}=../../data/
+>
+-{vIncl}=
+-I ../ 
+-I {pSFML}include/
+>
+;Build Witch Blast
+-c {pSrc} -o {pObj}witchblast/
+-{vIncl}
+>
+;Generate executable
+-o obj/cpp_{_sPlatform}_{_sOpt}/ -#To _out/{_sPlatform}_{_sOpt}/App.*
+>
+-#Run
