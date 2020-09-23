@@ -27,24 +27,26 @@
 -c {pSFML_src}System/Win32/ -o {pObj}SFML/System/Win32/ -{vIncl} -{vFlag}
 >
 ;Build Audio
--c {pSFML_src}Audio/		-o {pObj}Audio/				-{vIncl} -{vFlag}
+-c {pSFML_src}Audio/		-o {pObj}SFML/Audio/				-{vIncl} -{vFlag}
 -I {pSFML_extlibs}headers/AL/
 -I {pSFML_extlibs}headers/
 >
 ;Build Graphics
--c {pSFML_src}Graphics/		-o {pObj}Graphics/			-{vIncl} -{vFlag}
+-c {pSFML_src}Graphics/		-o {pObj}SFML/Graphics/			-{vIncl} -{vFlag}
 -I {pSFML_extlibs}headers/freetype2/
 -I {pSFML_extlibs}headers/stb_image/
 >
 ;Build Network
--c &{pSFML_src}Network/			-o {pObj}Network/			-{vIncl} -{vFlag}
+-c &{pSFML_src}Network/			-o {pObj}SFML/Network/			-{vIncl} -{vFlag}
 >
--c {pSFML_src}Network/Win32/	-o {pObj}Network/Win32/		-{vIncl} -{vFlag}
+-c {pSFML_src}Network/Win32/	-o {pObj}SFML/Network/Win32/		-{vIncl} -{vFlag}
 >
 ;Build Main example
--c {pSFML_src}Main/MainWin32.cpp  -o {pObj}Main/MainWin32.o	-{vIncl} -{vFlag}
+-c {pSFML_src}Main/MainWin32.cpp  -o {pObj}SFML/Main/MainWin32.o	-{vIncl} -{vFlag}
 >
--c {pSFML}examples/window/ 		  -o {pObj}examples/window/			-{vIncl} -{vFlag}
+;-c {pSFML}examples/window/ 		  -o {pObj}examples/window/			-{vIncl} -{vFlag}
+>
+-#Copy {pSFML_extlibs}bin/x86/ ./
 >
 ;Link?
 -o {pObj} -#To App.exe

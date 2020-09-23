@@ -1,8 +1,11 @@
--{vFlag}=""
 >
 -{pObj}:=obj/cpp_{_sPlatform}_{_sOpt}/
 >
 -#Run "../sfml/Build_SFML.cwc"
+>
+-{vFlag}=
+-DUNICODE
+-DSFML_STATIC
 >
 -{pSrc}=../../src/
 -{pMedia}=../../media/
@@ -15,8 +18,24 @@
 ;Build Witch Blast
 -c {pSrc} -o {pObj}witchblast/
 -{vIncl}
+-{vFlag}
+>
+-#Copy {pMedia} media/
+-#Copy {pData} data/
 >
 ;Generate executable
 -o obj/cpp_{_sPlatform}_{_sOpt}/ -#To _out/{_sPlatform}_{_sOpt}/App.*
+-L {pSFML_extlibs}libs-mingw/x86/
+-lFLAC
+-lfreetype
+-lopenal32
+-lvorbisfile
+-lvorbisenc
+-lvorbis
+-logg
+-lws2_32
+-lopengl32
+-lgdi32
+-lwinmm
 >
 -#Run
