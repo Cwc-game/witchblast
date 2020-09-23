@@ -1,0 +1,91 @@
+﻿<Toolchain> <!-- Android Cwc Config -->
+
+<cmd>-{pLib_ABI}=lib/armeabi-v7a/</cmd> 
+
+<Config>
+	<Platform name="Android" default="true"></Platform>
+	
+	<Type name="C">   <Extention>c</Extention>              </Type>
+	<Type name="C++"> <Extention>c++,cc,cpp,cxx</Extention> </Type>
+	<BinExt>so</BinExt>
+</Config>
+
+
+<Exe>
+
+	<Resource></Resource>
+
+    <Debugger>ndk/prebuilt/windows-x86_64/bin/gdb.exe</Debugger>
+    <Sanitizer>DrMemory/bin/drmemory.exe</Sanitizer>
+
+    <Compiler type="C">ndk/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -std=c99 </Compiler>
+
+    <Compiler>ndk/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe</Compiler>
+
+    <Linker>ndk/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe</Linker>
+    <Linker_Static>ndk/toolchains/llvm/prebuilt/windows-x86_64/bin/ar.exe</Linker_Static>
+    <Linker_Dynamic>ndk/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe</Linker_Dynamic>
+
+	<ndk-build>ndk/prebuilt/windows-x86_64/bin/make.exe</ndk-build> <!-- https://developer.android.com/ndk/guides/ndk-build -->
+	
+	<javac>jdk/bin/javac.exe -source 8 -target 8 -bootclasspath "{_pModule}api/android-21/android.jar" </javac>
+	<dx>jdk/bin/java.exe -jar "{_pModule}platform-tools/lib/dx.jar" --dex</dx>
+	
+	<res>aapt/aapt.exe package -f -I "{_pModule}api/android-21/android.jar" </res>
+	<apk>aapt/aapt.exe package -f -I "{_pModule}api/android-21/android.jar" </apk>
+	<aapt>aapt/aapt.exe </aapt>
+	<zipalign>aapt/zipalign.exe -f -p 4 </zipalign>
+	<keytool>jdk/bin/keytool.exe</keytool>
+	
+	<apksigner>jdk/bin/java.exe -jar "{_pModule}aapt/lib/apksigner.jar" sign </apksigner>
+	<adb>platform-tools/adb.exe</adb>
+	<ndk-stack>platform-tools/ndk-stack.exe</ndk-stack>
+
+</Exe>
+
+<Arguments>
+    <CompilerLinker>-target x86_64-linux-android17 </CompilerLinker>
+
+	
+    <CompilerLinker>-I"{_pModule}clang_inc/" </CompilerLinker>
+	<CompilerLinker>-I"{_pModule}pthreads/" </CompilerLinker>
+
+  
+    <CompilerLinker>-I"{_pModule}lib/gcc/i686-w64-mingw32/8.1.0/include/" </CompilerLinker>
+  
+
+    <CompilerLinker>-I"{_pProject}" </CompilerLinker>
+
+
+    <CompilerLinker>-fno-rtti -fno-exceptions </CompilerLinker>
+   
+    <!-- <CompilerLinker>-m32 </CompilerLinker> -->
+    <CompilerLinker>-fcolor-diagnostics -fansi-escape-codes </CompilerLinker>
+    <CompilerLinker>-Wno-pragma-pack  </CompilerLinker>
+	
+	<Compiler>-DGZ_D_Monothread</Compiler>
+ 
+    <Compiler>-Werror=return-type </Compiler>
+	<Compiler>-Wno-return-type-c-linkage</Compiler> 	<!-- Export C with class is acceptable when using it from C++ (Just for Clang): To Follow GCC which is disabled by default -->
+   
+   
+    <Compiler>-MD </Compiler>
+    <Linker>-I"{_pProject}" </Linker>
+   
+    <Linker>-Qunused-arguments -Wno-unused-value -Wno-deprecated-register -Wno-ignored-attributes -Qunused-arguments -Wno-expansion-to-defined -Wno-ignored-pragmas </Linker>   
+ 
+    <Linker>-static-libstdc++ -shared -v </Linker> 
+    <Linker_Static>-r -s </Linker_Static>
+    <Linker_Dynamic>-target x86_64-linux-android17 -shared </Linker_Dynamic> <!-- 'shared' Always dynamic lib -->
+
+    <Debug>-g</Debug>
+    <O2>-O2</O2>
+    <O3>-O3</O3>
+    <OS>-Os</OS>
+  
+</Arguments>
+
+</Toolchain> <!-- End -->
+
+
+

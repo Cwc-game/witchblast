@@ -1,0 +1,71 @@
+-{vFlag}=
+-DUNICODE
+-DSFML_STATIC
+>
+-{pObj}:=obj/sfml/{_sPlatform}_{_sOpt}/
+>
+-{pSFML}=../../SFML-2.5.1/
+>
+-{pSFML_src}={pSFML}src/SFML/
+-{pSFML_extlibs}={pSFML}extlibs/
+>
+-{vIncl}=
+-I {pSFML}include/
+-I {pSFML}src/
+>
+;Build Context 
+-c &{pSFML_src}Android/ 	
+;!{pSFML_src}Window/EGLCheck.cpp	
+;!{pSFML_src}Window/EglContext.cpp	
+ -o {pObj}SFML/Android/   -{vIncl} -{vFlag}
+>
+-c {pSFML_src}Window/Android/ -o {pObj}SFML/Window/Android/ -{vIncl} -{vFlag}
+>
+;Build System
+-c &{pSFML_src}System/ 		-o {pObj}SFML/System/ 		-{vIncl} -{vFlag}
+>
+-c {pSFML_src}System/Android/ -o {pObj}SFML/System/Android/ -{vIncl} -{vFlag}
+>
+;Build Audio
+-c {pSFML_src}Audio/		-o {pObj}SFML/Audio/				-{vIncl} -{vFlag}
+-I {pSFML_extlibs}headers/AL/
+-I {pSFML_extlibs}headers/
+>
+;Build Graphics
+-c {pSFML_src}Graphics/		-o {pObj}SFML/Graphics/			-{vIncl} -{vFlag}
+-I {pSFML_extlibs}headers/freetype2/
+-I {pSFML_extlibs}headers/stb_image/
+>
+;Build Network
+-c &{pSFML_src}Network/			-o {pObj}SFML/Network/			-{vIncl} -{vFlag}
+>
+-c {pSFML_src}Network/Android/	-o {pObj}SFML/Network/Android/		-{vIncl} -{vFlag}
+>
+;Build Main example
+-c {pSFML_src}Main/MainWin32.cpp  -o {pObj}SFML/Main/MainWin32.o	-{vIncl} -{vFlag}
+>
+;-c {pSFML}examples/window/ 		  -o {pObj}examples/window/			-{vIncl} -{vFlag}
+>
+-#Copy {pSFML_extlibs}bin/x86/ ./
+>
+;Link?
+-o {pObj} -#To App.exe
+-L {pSFML_extlibs}libs-android/armeabi/
+;-L {pSFML_extlibs}libs-android/armeabi-v7a/
+-lFLAC
+-lfreetype
+-lopenal32
+-lvorbisfile
+-lvorbisenc
+-lvorbis
+-logg
+
+>	
+-#Run
+>
+
+;armeabi-v7a
+
+
+
+					

@@ -666,6 +666,7 @@ Keyboard::Key WindowImplAndroid::androidKeyToSF(int32_t key)
         case AKEYCODE_BUTTON_SELECT:
         case AKEYCODE_BUTTON_MODE:        return Keyboard::Unknown;
     }
+	return Keyboard::Unknown;
 }
 
 
