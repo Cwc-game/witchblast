@@ -2,7 +2,7 @@
 -DUNICODE
 -DSFML_STATIC
 >
--{pObj}:=obj/sfml/cpp_{_sPlatform}_{_sOpt}/
+-{pObj}:=obj/sfml/{_sPlatform}_{_sOpt}/
 >
 -{pSFML}=../../SFML-2.5.1/
 >
@@ -14,7 +14,10 @@
 -I {pSFML}src/
 >
 ;Build Context 
--c &{pSFML_src}Window/ 		-o {pObj}SFML/Window/ 		-{vIncl} -{vFlag}
+-c &{pSFML_src}Window/ 	
+!{pSFML_src}Window/EGLCheck.cpp	
+!{pSFML_src}Window/EglContext.cpp	
+ -o {pObj}SFML/Window/   -{vIncl} -{vFlag}
 >
 -c {pSFML_src}Window/Win32/ -o {pObj}SFML/Window/Win32/ -{vIncl} -{vFlag}
 >

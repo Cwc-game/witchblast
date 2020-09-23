@@ -11,6 +11,7 @@
 *.bat
 *.xcf
 *.dat
+*.wdat
 *.cscope_file_list
 DeathCertificate.png
 src/MD5.cpp
