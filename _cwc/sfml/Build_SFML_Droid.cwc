@@ -1,6 +1,7 @@
 -{vFlag}=
 -DUNICODE
 -DSFML_STATIC
+-DSFML_OPENGL_ES
 -fPIC
 >
 -{pSFML_obj}:=obj/cpp_{_sPlatform}_{_sOpt}/sfml/
@@ -16,8 +17,8 @@
 >
 ;Build Context 
 -c &{pSFML_src}Window/ 	
-!{pSFML_src}Window/GlContext.cpp	
-!{pSFML_src}Window/GlResource.cpp	
+;!{pSFML_src}Window/GlContext.cpp	
+;!{pSFML_src}Window/GlResource.cpp	
  -o {pSFML_obj}SFML/Window/   -{vIncl} -{vFlag}
 >
 -c {pSFML_src}Window/Android/ -o {pSFML_obj}SFML/Window/Android/ -{vIncl} -{vFlag}

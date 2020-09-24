@@ -6,6 +6,7 @@
 -{vFlag}=
 -DUNICODE
 -DSFML_STATIC
+-DSFML_OPENGL_ES
 -fPIC
 -Wno-inconsistent-missing-override
 >
