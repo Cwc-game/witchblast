@@ -29,3 +29,16 @@ int main()
 
     return 0;
 }
+
+extern "C" int Android_Main();
+extern "C" int Android_Update();
+	
+extern "C" int Android_Main() {
+		printf("\nAndroid_Main!");
+		return main();
+}
+	
+extern "C" int Android_Update() {
+	printf("\nAndroid_upd!");
+	return 0;
+}

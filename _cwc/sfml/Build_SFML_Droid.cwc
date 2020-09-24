@@ -15,10 +15,10 @@
 -I {pSFML}src/
 >
 ;Build Context 
--c &{pSFML_src}Android/ 	
-;!{pSFML_src}Window/EGLCheck.cpp	
-;!{pSFML_src}Window/EglContext.cpp	
- -o {pObj}SFML/Android/   -{vIncl} -{vFlag}
+-c &{pSFML_src}Window/ 	
+!{pSFML_src}Window/GlContext.cpp	
+!{pSFML_src}Window/GlResource.cpp	
+ -o {pObj}SFML/Window/   -{vIncl} -{vFlag}
 >
 -c {pSFML_src}Window/Android/ -o {pObj}SFML/Window/Android/ -{vIncl} -{vFlag}
 >
