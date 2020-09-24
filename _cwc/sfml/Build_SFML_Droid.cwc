@@ -3,7 +3,7 @@
 -DSFML_STATIC
 -fPIC
 >
--{pObj}:=obj/sfml/{_sPlatform}_{_sOpt}/
+-{pSFML_obj}:=obj/cpp_{_sPlatform}_{_sOpt}/sfml/
 >
 -{pSFML}=../../SFML-2.5.1/
 >
@@ -18,39 +18,39 @@
 -c &{pSFML_src}Window/ 	
 !{pSFML_src}Window/GlContext.cpp	
 !{pSFML_src}Window/GlResource.cpp	
- -o {pObj}SFML/Window/   -{vIncl} -{vFlag}
+ -o {pSFML_obj}SFML/Window/   -{vIncl} -{vFlag}
 >
--c {pSFML_src}Window/Android/ -o {pObj}SFML/Window/Android/ -{vIncl} -{vFlag}
+-c {pSFML_src}Window/Android/ -o {pSFML_obj}SFML/Window/Android/ -{vIncl} -{vFlag}
 >
 ;Build System
--c &{pSFML_src}System/ 		-o {pObj}SFML/System/ 		-{vIncl} -{vFlag}
+-c &{pSFML_src}System/ 		-o {pSFML_obj}SFML/System/ 		-{vIncl} -{vFlag}
 >
--c {pSFML_src}System/Android/ -o {pObj}SFML/System/Android/ -{vIncl} -{vFlag}
+-c {pSFML_src}System/Android/ -o {pSFML_obj}SFML/System/Android/ -{vIncl} -{vFlag}
 >
 ;Build Audio
--c {pSFML_src}Audio/		-o {pObj}SFML/Audio/				-{vIncl} -{vFlag}
+-c {pSFML_src}Audio/		-o {pSFML_obj}SFML/Audio/				-{vIncl} -{vFlag}
 -I {pSFML_extlibs}headers/AL/
 -I {pSFML_extlibs}headers/
 >
 ;Build Graphics
--c {pSFML_src}Graphics/		-o {pObj}SFML/Graphics/			-{vIncl} -{vFlag}
+-c {pSFML_src}Graphics/		-o {pSFML_obj}SFML/Graphics/			-{vIncl} -{vFlag}
 -I {pSFML_extlibs}headers/freetype2/
 -I {pSFML_extlibs}headers/stb_image/
 >
 ;Build Network
--c &{pSFML_src}Network/			-o {pObj}SFML/Network/			-{vIncl} -{vFlag}
+-c &{pSFML_src}Network/			-o {pSFML_obj}SFML/Network/			-{vIncl} -{vFlag}
 >
--c {pSFML_src}Network/Android/	-o {pObj}SFML/Network/Android/		-{vIncl} -{vFlag}
+-c {pSFML_src}Network/Android/	-o {pSFML_obj}SFML/Network/Android/		-{vIncl} -{vFlag}
 >
 ;Build Main example
--c {pSFML_src}Main/MainWin32.cpp  -o {pObj}SFML/Main/MainWin32.o	-{vIncl} -{vFlag}
+-c {pSFML_src}Main/MainWin32.cpp  -o {pSFML_obj}SFML/Main/MainWin32.o	-{vIncl} -{vFlag}
 >
-;-c {pSFML}examples/window/ 		  -o {pObj}examples/window/			-{vIncl} -{vFlag}
+;-c {pSFML}examples/window/ 		  -o {pSFML_obj}examples/window/			-{vIncl} -{vFlag}
 >
 -#Copy {pSFML_extlibs}bin/x86/ ./
 >
 ;Link?
--o {pObj} -#To libSFML_Droid.*
+-o {pSFML_obj} -#To libSFML_Droid.*
 ;-L {pSFML_extlibs}libs-android/armeabi/
 -L {pSFML_extlibs}libs-android/armeabi-v7a/
 -lfreetype
