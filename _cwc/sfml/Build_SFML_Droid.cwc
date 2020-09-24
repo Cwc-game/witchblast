@@ -2,6 +2,7 @@
 -DUNICODE
 -DSFML_STATIC
 -DSFML_OPENGL_ES
+-DGL_GLEXT_PROTOTYPES
 -fPIC
 >
 -{pSFML_obj}:=obj/cpp_{_sPlatform}_{_sOpt}/sfml/
