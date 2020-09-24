@@ -1,0 +1,39 @@
+>
+-{pObj}:=obj/cpp_{_sPlatform}_{_sOpt}/
+>
+-#Run "../sfml/Build_SFML_Droid.cwc"
+>
+-{vFlag}=
+-DUNICODE
+-DSFML_STATIC
+-fPIC
+-Wno-inconsistent-missing-override
+>
+-{pSrc}=../../src/
+-{pMedia}=../../media/
+-{pData}=../../data/
+>
+-{vIncl}=
+-I ../ 
+-I {pSFML}include/
+>
+;Build Witch Blast
+-c {pSrc} -o {pObj}witchblast/
+-{vIncl}
+-{vFlag}
+>
+-#Copy {pMedia} media/
+-#Copy {pData} data/
+>
+;Generate executable
+;-o obj/cpp_{_sPlatform}_{_sOpt}/ -#To _out/{_sPlatform}_{_sOpt}/App.*
+;-L {pSFML_extlibs}libs-android/armeabi-v7a/
+;-lfreetype
+;-lFLAC
+;-lopenal
+;-lvorbisfile
+;-lvorbisenc
+;-lvorbis
+;-llog -landroid -lEGL -lGLESv2
+>
+-#Run

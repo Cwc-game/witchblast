@@ -1,6 +1,7 @@
 -{vFlag}=
 -DUNICODE
 -DSFML_STATIC
+-fPIC
 >
 -{pObj}:=obj/sfml/{_sPlatform}_{_sOpt}/
 >
@@ -49,23 +50,18 @@
 -#Copy {pSFML_extlibs}bin/x86/ ./
 >
 ;Link?
--o {pObj} -#To App.exe
--L {pSFML_extlibs}libs-android/armeabi/
-;-L {pSFML_extlibs}libs-android/armeabi-v7a/
--lFLAC
+-o {pObj} -#To libSFML_Droid.*
+;-L {pSFML_extlibs}libs-android/armeabi/
+-L {pSFML_extlibs}libs-android/armeabi-v7a/
 -lfreetype
--lopenal32
+-lFLAC
+-lopenal
 -lvorbisfile
 -lvorbisenc
 -lvorbis
--logg
-
+-llog -landroid -lEGL -lGLESv2
 >	
--#Run
+
 >
-
-;armeabi-v7a
-
-
 
 					

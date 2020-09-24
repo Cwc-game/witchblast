@@ -1,4 +1,6 @@
 <Config>
   <BreakpointList />
-  <TreeViewPrj />
+  <TreeViewPrj>
+    <TreeViewPrj />
+  </TreeViewPrj>
 </Config>
