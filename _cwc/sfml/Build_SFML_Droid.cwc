@@ -51,7 +51,9 @@
 -c {pSFML_src}Network/Unix/	-o {pSFML_obj}SFML/Network/Unix/		-{vIncl} -{vFlag}
 >
 ;Build Main example
--c {pSFML_src}Main/MainWin32.cpp  -o {pSFML_obj}SFML/Main/MainWin32.o	-{vIncl} -{vFlag}
+-c {pSFML_src}Main/MainAndroid.cpp  -o {pSFML_obj}SFML/Main/MainAndroid.o	-{vIncl} -{vFlag}
+>
+;-c {pSFML_src}Main/SFMLActivity.cpp  -o {pSFML_obj}SFML/Main/SFMLActivity.o	-{vIncl} -{vFlag}
 >
 ;-c {pSFML}examples/window/ 		  -o {pSFML_obj}examples/window/			-{vIncl} -{vFlag}
 >

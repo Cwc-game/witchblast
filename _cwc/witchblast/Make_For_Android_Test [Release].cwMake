@@ -1,3 +1,4 @@
+;https://stackoverflow.com/questions/59504840/create-jni-ndk-apk-only-command-line-without-gradle-ant-or-cmake
 ;Register Cwc before using a .cwmake
 >
 ;-{_sOpt}="O2"
