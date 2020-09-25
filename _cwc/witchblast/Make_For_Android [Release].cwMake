@@ -72,5 +72,7 @@ adb shell pidof -s {sPckName}  -#RetryForInput
 >
 adb logcat --pid=[adb shell pidof -s {sPckName}] -#CloseWhen "beginning of crash"
 >
+;adb logcat -b crash -v time
+>
 ndk-stack -sym {pObj}build/apk/{pLib_ABI} [<< adb logcat -b crash -v time]
 >
