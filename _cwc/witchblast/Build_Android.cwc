@@ -16,6 +16,7 @@
 >
 -{vIncl}=
 -I ../ 
+-I  ../../src/
 -I {pSFML}include/
 >
 ;Build Witch Blast

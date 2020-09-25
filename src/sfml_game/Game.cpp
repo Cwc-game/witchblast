@@ -13,6 +13,9 @@
   *  You should have received a copy of the GNU General Public License
   *  along with Witch Blast.  If not, see <http://www.gnu.org/licenses/>.
   */
+  
+  
+#include "api/Android.h"
 
 #include "Game.h"
 
@@ -29,13 +32,19 @@ void Game::create(int screenWidth, int screenHeight, std::string windowsTitle, b
 {
   this->screenWidth = screenWidth;
   this->screenHeight = screenHeight;
-
-  if (fullScreen)
+	LOGV("screenWidth %d",screenWidth );
+	LOGV("screenHeight %d ",screenHeight );
+  if (fullScreen){
+	LOGV("fullScreen");
     app = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight), windowsTitle, sf::Style::Fullscreen);
-  else
+  }else{
     app = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight), windowsTitle);
+  }
+  	LOGV("setVerticalSyncEnabled");
   if (vsync) app->setVerticalSyncEnabled(true);
   else app->setFramerateLimit(60);
+    	LOGV("end");
+  
 }
 
 Game::~Game()

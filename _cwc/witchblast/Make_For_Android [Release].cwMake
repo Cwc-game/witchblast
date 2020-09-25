@@ -31,7 +31,8 @@
 -lvorbisfile
 -lvorbisenc
 -lvorbis
--llog -landroid -lEGL -lGLESv2
+-logg
+-llog -landroid -lGLESv2 -lGLESv1_CM -lEGL
 >
 -#Copy {pBinOut}App.so {pObj}build/apk/{pLib_ABI}libGZE.so
 -#Copy {pSFML_extlibs}libs-android/armeabi-v7a/libopenal.so {pObj}build/apk/{pLib_ABI}libopenal.so

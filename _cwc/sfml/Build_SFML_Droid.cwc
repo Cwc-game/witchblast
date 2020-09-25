@@ -24,8 +24,12 @@
 >
 -c {pSFML_src}Window/Android/ -o {pSFML_obj}SFML/Window/Android/ -{vIncl} -{vFlag}
 >
+;-c {pSFML_src}Window/Unix/	-o {pSFML_obj}SFML/Window/Unix/		-{vIncl} -{vFlag}
+>
 ;Build System
--c &{pSFML_src}System/ 		-o {pSFML_obj}SFML/System/ 		-{vIncl} -{vFlag}
+-c &{pSFML_src}System/ 		-o {pSFML_obj}SFML/System/ 					-{vIncl} -{vFlag}
+>
+-c {pSFML_src}System/Unix/ 		-o {pSFML_obj}SFML/System/Unix/ 		-{vIncl} -{vFlag}
 >
 -c {pSFML_src}System/Android/ -o {pSFML_obj}SFML/System/Android/ -{vIncl} -{vFlag}
 >
@@ -44,12 +48,14 @@
 >
 -c {pSFML_src}Network/Android/	-o {pSFML_obj}SFML/Network/Android/		-{vIncl} -{vFlag}
 >
+-c {pSFML_src}Network/Unix/	-o {pSFML_obj}SFML/Network/Unix/		-{vIncl} -{vFlag}
+>
 ;Build Main example
 -c {pSFML_src}Main/MainWin32.cpp  -o {pSFML_obj}SFML/Main/MainWin32.o	-{vIncl} -{vFlag}
 >
 ;-c {pSFML}examples/window/ 		  -o {pSFML_obj}examples/window/			-{vIncl} -{vFlag}
 >
--#Copy {pSFML_extlibs}bin/x86/ ./
+-#Copy {pSFML_extlibs}libs-android/armeabi-v7a/libopenal.so {pObj}build/apk/{pLib_ABI}libopenal.so
 >
 ;Link?
 -o {pSFML_obj} -#To libSFML_Droid.*
@@ -61,7 +67,7 @@
 -lvorbisfile
 -lvorbisenc
 -lvorbis
--llog -landroid -lEGL -lGLESv2
+-landroid -lGLESv2 -lGLESv1_CM -lEGL -llog 
 >	
 
 >
