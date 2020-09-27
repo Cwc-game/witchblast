@@ -5,3 +5,23 @@
 -{_sDynamic}="dll"
 >
 -#Run Build_SFML.cwc -{_wToolchain}= VLianceTool/LibRT
+>
+-c {pSFML}examples/window/ 		  -o {pSFML_obj}examples/window/			-{vIncl} -{vFlag}
+>
+;Link?
+-o {pSFML_obj} -#To App.exe
+-L {pSFML_extlibs}libs-mingw/x86/
+-lFLAC
+-lfreetype
+-lopenal32
+-lvorbisfile
+-lvorbisenc
+-lvorbis
+-logg
+-lws2_32
+-lopengl32
+-lgdi32
+-lwinmm
+>	
+;-#Run
+>
