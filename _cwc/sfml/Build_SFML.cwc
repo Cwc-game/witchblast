@@ -2,7 +2,7 @@
 -DUNICODE
 -DSFML_STATIC
 >
--{pObj}:=obj/sfml/{_sPlatform}_{_sOpt}/
+-{pSFML_obj}:=obj/cpp_{_sPlatform}_{_sOpt}/sfml/
 >
 -{pSFML}=../../SFML-2.5.1/
 >
@@ -17,39 +17,39 @@
 -c &{pSFML_src}Window/ 	
 !{pSFML_src}Window/EGLCheck.cpp	
 !{pSFML_src}Window/EglContext.cpp	
- -o {pObj}SFML/Window/   -{vIncl} -{vFlag}
+ -o {pSFML_obj}SFML/Window/   -{vIncl} -{vFlag}
 >
--c {pSFML_src}Window/Win32/ -o {pObj}SFML/Window/Win32/ -{vIncl} -{vFlag}
+-c {pSFML_src}Window/Win32/ -o {pSFML_obj}SFML/Window/Win32/ -{vIncl} -{vFlag}
 >
 ;Build System
--c &{pSFML_src}System/ 		-o {pObj}SFML/System/ 		-{vIncl} -{vFlag}
+-c &{pSFML_src}System/ 		-o {pSFML_obj}SFML/System/ 		-{vIncl} -{vFlag}
 >
--c {pSFML_src}System/Win32/ -o {pObj}SFML/System/Win32/ -{vIncl} -{vFlag}
+-c {pSFML_src}System/Win32/ -o {pSFML_obj}SFML/System/Win32/ -{vIncl} -{vFlag}
 >
 ;Build Audio
--c {pSFML_src}Audio/		-o {pObj}SFML/Audio/				-{vIncl} -{vFlag}
+-c {pSFML_src}Audio/		-o {pSFML_obj}SFML/Audio/				-{vIncl} -{vFlag}
 -I {pSFML_extlibs}headers/AL/
 -I {pSFML_extlibs}headers/
 >
 ;Build Graphics
--c {pSFML_src}Graphics/		-o {pObj}SFML/Graphics/			-{vIncl} -{vFlag}
+-c {pSFML_src}Graphics/		-o {pSFML_obj}SFML/Graphics/			-{vIncl} -{vFlag}
 -I {pSFML_extlibs}headers/freetype2/
 -I {pSFML_extlibs}headers/stb_image/
 >
 ;Build Network
--c &{pSFML_src}Network/			-o {pObj}SFML/Network/			-{vIncl} -{vFlag}
+-c &{pSFML_src}Network/			-o {pSFML_obj}SFML/Network/			-{vIncl} -{vFlag}
 >
--c {pSFML_src}Network/Win32/	-o {pObj}SFML/Network/Win32/		-{vIncl} -{vFlag}
+-c {pSFML_src}Network/Win32/	-o {pSFML_obj}SFML/Network/Win32/		-{vIncl} -{vFlag}
 >
 ;Build Main example
--c {pSFML_src}Main/MainWin32.cpp  -o {pObj}SFML/Main/MainWin32.o	-{vIncl} -{vFlag}
+-c {pSFML_src}Main/MainWin32.cpp  -o {pSFML_obj}SFML/Main/MainWin32.o	-{vIncl} -{vFlag}
 >
-;-c {pSFML}examples/window/ 		  -o {pObj}examples/window/			-{vIncl} -{vFlag}
+;-c {pSFML}examples/window/ 		  -o {pSFML_obj}examples/window/			-{vIncl} -{vFlag}
 >
 -#Copy {pSFML_extlibs}bin/x86/ ./
 >
 ;Link?
--o {pObj} -#To App.exe
+-o {pSFML_obj} -#To App.exe
 -L {pSFML_extlibs}libs-mingw/x86/
 -lFLAC
 -lfreetype
@@ -63,7 +63,7 @@
 -lgdi32
 -lwinmm
 >	
--#Run
+;-#Run
 >
 
 

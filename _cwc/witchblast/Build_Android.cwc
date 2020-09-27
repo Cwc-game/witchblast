@@ -38,4 +38,4 @@
 ;-lvorbis
 ;-llog -landroid -lEGL -lGLESv2
 >
--#Run
+;-#Run

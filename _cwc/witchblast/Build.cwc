@@ -1,5 +1,5 @@
 >
--{pObj}:=obj/cpp_{_sPlatform}_{_sOpt}/
+-{pObj_WB}:=obj/cpp_{_sPlatform}_{_sOpt}/
 >
 -#Run "../sfml/Build_SFML.cwc"
 >
@@ -16,7 +16,7 @@
 -I {pSFML}include/
 >
 ;Build Witch Blast
--c {pSrc} -o {pObj}witchblast/
+-c {pSrc} -o {pObj_WB}witchblast/
 -{vIncl}
 -{vFlag}
 >
