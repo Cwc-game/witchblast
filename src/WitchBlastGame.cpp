@@ -316,24 +316,20 @@ WitchBlastGame* gameptr;
 
 WitchBlastGame::WitchBlastGame()
 {
-LOGV("WitchBlastGame");
   gameptr = this;
 
   gameFromSaveFile = false;
-  		LOGV("configureFromFile!!");
   configureFromFile();
-		LOGV("-configureFromFile!!");
+
   if (parameters.vsync == false)
   {
-  	LOGV("-parameters!!");
     //app->setVerticalSyncEnabled(false);
     app->setFramerateLimit(60);
   }
-	LOGV("-setFramerateLimit!");
+
   // Fullscreen ?
   if (parameters.fullscreen)
   {
-  LOGV("-fullscreen!");
     create(SCREEN_WIDTH, SCREEN_HEIGHT, APP_NAME + " V" + APP_VERSION, true, parameters.vsync);
     sf::View view = app->getDefaultView();
     view = getFullScreenLetterboxView( view, SCREEN_WIDTH, SCREEN_HEIGHT );
@@ -341,10 +337,9 @@ LOGV("WitchBlastGame");
   }
   else
   {
- LOGV("-not fullscreen!");
     create(SCREEN_WIDTH, SCREEN_HEIGHT, APP_NAME + " V" + APP_VERSION, false, parameters.vsync);
   }
-	LOGV("init current music!!");
+
   // init current music
   currentStandardMusic = 0;
 
@@ -402,7 +397,7 @@ LOGV("WitchBlastGame");
     "media/bag.png",              "media/ui_pause.png",
     "media/score_font.png",       "media/effect_zone.png",
   };
-	LOGV("addImage");
+
   for (const char *const filename : images)
     ImageManager::getInstance().addImage(filename);
 
@@ -484,7 +479,7 @@ LOGV("WitchBlastGame");
   // game main client position in the UI
   xOffset = OFFSET_X;
   yOffset = OFFSET_Y;
-	LOGV("SoundManager");
+
   SoundManager::getInstance().setVolume(parameters.soundVolume);
   for (const char *const filename : sounds)
   {
@@ -496,7 +491,7 @@ LOGV("WitchBlastGame");
     myText.setFont(font);
   }
   graphicsFont.loadFromFile("media/Caudex-Bold.ttf");
-	LOGV("loadFromFile");
+
   miniMap = NULL;
   currentMap = NULL;
   currentFloor = NULL;
@@ -528,7 +523,7 @@ LOGV("WitchBlastGame");
   uiSprites.bagSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_BAG));
   uiSprites.bagSprite.setPosition(116, 606);
   uiSprites.numberSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_SCORE_FONT));
-LOGV("uiSprites");
+
   introScreenSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_INTRO));
   titleSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_TITLE));
   titleSprite.setOrigin(titleSprite.getTextureRect().width / 2, titleSprite.getTextureRect().height / 2);
@@ -555,7 +550,7 @@ LOGV("uiSprites");
     }
   }
   nbPlayers = 1;
-LOGV("buttons");
+
   // click zones
   for (int i = 0; i < 4; i++)
     buttons.push_back(ButtonStruct { sf::IntRect(161 + 36 * i, 615, 32, 32), ButtonConsumable, i });
@@ -1038,9 +1033,7 @@ void WitchBlastGame::prepareIntro()
   introState = 0;
   introSoundState = 0;
 
-	LOGV("playSound!");
   SoundManager::getInstance().playSound(SOUND_NIGHT);
-  	LOGV("endplaySound!");
 }
 
 void WitchBlastGame::updateIntro()
@@ -3971,9 +3964,8 @@ void WitchBlastGame::renderInGameMenu()
 
 void WitchBlastGame::startGame()
 {
-	LOGV("getAbsolutTime!");
   lastTime = getAbsolutTime();
-	LOGV("prepareIntro!");
+
   prepareIntro();
 
   // Start game loop

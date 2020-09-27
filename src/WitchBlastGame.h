@@ -17,8 +17,6 @@
 #ifndef WITCH_BLAST_GAME_H
 #define WITCH_BLAST_GAME_H
 
-#include "api/Android.h"
-
 #include "sfml_game/Game.h"
 #include "sfml_game/TileMapEntity.h"
 #include "PlayerEntity.h"

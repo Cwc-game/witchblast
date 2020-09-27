@@ -1,8 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "WitchBlastGame.h"
 
-
-
 #ifdef __APPLE__
 #include "CoreFoundation/CoreFoundation.h"
 #endif
@@ -25,28 +23,9 @@ int main()
     chdir(path);
     // -------------------------------------------------------------------
 #endif
-			LOGV("game!!");
-			LOGV("bbb!!");
+
     WitchBlastGame game;
-		LOGV("aastartGame!!");
-		LOGV("startGame!!");
     game.startGame();
 
     return 0;
-}
-
-extern "C" int Android_Main();
-extern "C" int Android_Update();
-	
-extern "C" int Android_Main() {
-
-			LOGV("Android_Main!!");
-		printf("\nAndroid_Main!");
-		return main();
-}
-	
-extern "C" int Android_Update() {
-	LOGV("Android_upd!");
-	printf("\nAndroid_upd!");
-	return 0;
 }
