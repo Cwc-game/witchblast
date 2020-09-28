@@ -1,5 +1,6 @@
 _out/
 assets/
+.vs/
 
 *.cbp
 *.depend
@@ -36,10 +37,5 @@ install_manifest.txt
 *.dmg
 *.app/
 
-# Visual Studio
-*.vcxproj*
-*.opensdf
-*.sdf
-*.sln
 
 obj/

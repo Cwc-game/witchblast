@@ -1047,12 +1047,12 @@ void WitchBlastGame::updateIntro()
     if (introSprites[i]->getX() < - SCREEN_WIDTH / 2) introSprites[i]->setX(introSprites[i]->getX() + 2 * SCREEN_WIDTH);
   }
 
-  if (gameTime > 2.0f && introSoundState == 0)
+  if (gameTime > 0.5f && introSoundState == 0)
   {
     SoundManager::getInstance().playSound(SOUND_INTRO_WITCH);
     introSoundState++;
   }
-  else if (gameTime > 7.0f && introSoundState == 1)
+  else if (gameTime > 5.5f && introSoundState == 1)
   {
     playMusic(MusicIntro);
     introSoundState++;
@@ -1069,7 +1069,7 @@ void WitchBlastGame::updateIntro()
   }
   else if (introState == 1)
   {
-    int frame = (gameTime - 2.5f) * 8.0f;
+    int frame = (gameTime - 2.5f) * 25.0f;
     if (frame > 16)
     {
       frame = 16;

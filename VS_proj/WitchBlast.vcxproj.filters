@@ -1,0 +1,1222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\WitchBlast">
+      <UniqueIdentifier>{ada8598f-d108-4d30-9455-069ab1cf1faa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFML">
+      <UniqueIdentifier>{81a80f45-e5c5-4e2e-a392-e3bee5bcd3e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFML\Audio">
+      <UniqueIdentifier>{f193fff2-02ae-4434-9f79-520d543ead0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFML\Graphics">
+      <UniqueIdentifier>{295b16f4-f9e2-422b-94c6-203255aa7907}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFML\Main">
+      <UniqueIdentifier>{18de440f-176a-48ef-b594-fab7b17a0722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFML\Network">
+      <UniqueIdentifier>{270d7912-75a6-4bfc-a496-8d3c6594a7cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFML\System">
+      <UniqueIdentifier>{b53d9a2b-ef0c-4e38-9b75-45c65c8a68b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFML\Window">
+      <UniqueIdentifier>{2883f071-7552-400c-a6e1-afbef1ab9d39}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ArtefactDescriptionEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BaseCreatureEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BatEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BlackRatEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BogeymanEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BoltEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BubbleEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ButcherEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CauldronEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ChestEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\CollidingSpriteEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Config.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CyclopsEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DoorEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DungeonMap.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DungeonMapEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EffectZoneEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EnemyBoltEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EnemyEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\EntityManager.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EvilFlowerEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ExplosionEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FairyEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FallingRockEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FranckyEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\Game.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\GameEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameFloor.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\GameMap.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GhostEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GiantSlimeEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GiantSpiderEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GreenRatEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\GuiEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\ImageManager.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ImpEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ItemEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\KingRatEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LargeSlimeEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LittleSpiderEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MagnetEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MiniMapEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ObstacleEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ParticleGenerator.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PlayerEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PnjEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PumpkinEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RatEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RockMissileEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SausageEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SlimeEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SlimePetEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SnakeEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\SoundManager.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SpiderEggEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SpiderWebEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\SpriteEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TextEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TextMapper.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sfml_game\TileMapEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\VampireEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WitchBlastGame.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WitchEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ZombieDarkEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ZombieEntity.cpp">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\InputSoundFile.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\Listener.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\Music.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\OutputSoundFile.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\Sound.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundBuffer.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundBufferRecorder.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileFactory.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderFlac.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderOgg.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderWav.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterFlac.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterOgg.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterWav.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundRecorder.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundSource.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundStream.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\ALCheck.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\AlResource.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\AudioDevice.cpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\ConvexShape.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Font.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\GLCheck.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\GLExtensions.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\GLLoader.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Glsl.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Image.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\ImageLoader.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RectangleShape.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderStates.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTarget.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTexture.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImpl.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImplDefault.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImplFBO.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderWindow.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Shader.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Shape.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Sprite.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Text.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Texture.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\TextureSaver.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Transform.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Transformable.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Vertex.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\VertexArray.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\VertexBuffer.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\View.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\BlendMode.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\CircleShape.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Color.cpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Main\MainWin32.cpp">
+      <Filter>Source Files\SFML\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Main\SFMLActivity.cpp">
+      <Filter>Source Files\SFML\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Main\MainAndroid.cpp">
+      <Filter>Source Files\SFML\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Packet.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Socket.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\SocketSelector.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\TcpListener.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\TcpSocket.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\UdpSocket.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Unix\SocketImpl.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Win32\SocketImpl.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Ftp.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Http.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\IpAddress.cpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\MemoryInputStream.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Mutex.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Sleep.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\String.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Thread.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\ThreadLocal.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Time.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Android\Activity.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Android\NativeActivity.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Android\ResourceStream.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\ClockImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\MutexImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\SleepImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\ThreadImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\ThreadLocalImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\ClockImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\MutexImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\SleepImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\ThreadImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\ThreadLocalImpl.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Clock.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Err.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\FileInputStream.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Lock.cpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Context.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Cursor.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\EGLCheck.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\EglContext.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\GlContext.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\GlResource.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Joystick.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\JoystickManager.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Keyboard.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Mouse.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Sensor.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\SensorManager.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Touch.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\VideoMode.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Window.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\WindowImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\ClipboardImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\CursorImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\InputImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\JoystickImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\SensorImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\VideoModeImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\WindowImplAndroid.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\FreeBSD\JoystickImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\iOS\CursorImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OpenBSD\JoystickImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OSX\HIDJoystickManager.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OSX\JoystickImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OSX\SensorImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OSX\VideoModeImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\ClipboardImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\CursorImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\Display.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\GlxContext.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\GlxExtensions.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\InputImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\JoystickImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\SensorImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\VideoModeImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\WindowImplX11.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\ClipboardImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\CursorImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\InputImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\JoystickImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\SensorImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\VideoModeImpl.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\WglContext.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\WglExtensions.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\WindowImplWin32.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Clipboard.cpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Achievements.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\api\Android.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ArtefactDescriptionEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BaseCreatureEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BatEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BlackRatEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BogeymanEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BoltEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BubbleEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ButcherEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CauldronEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ChestEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\CollidingSpriteEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Config.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Constants.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CyclopsEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DoorEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DungeonMap.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DungeonMapEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EffectZoneEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EnemyBoltEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EnemyEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\EntityManager.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EvilFlowerEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ExplosionEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FairyEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FallingRockEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FranckyEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\Game.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\GameEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameFloor.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\GameMap.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GhostEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GiantSlimeEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GiantSpiderEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GreenRatEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\GuiEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\ImageManager.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ImpEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Items.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\KingRatEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LargeSlimeEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LittleSpiderEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MagnetEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MessageGenerator.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MiniMapEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\MyTools.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ObstacleEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ParticleGenerator.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PlayerEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PnjEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PumpkinEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RatEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RockMissileEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SausageEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scoring.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SlimeEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SlimePetEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SnakeEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\SoundManager.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SpiderEggEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SpiderWebEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\SpriteEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StandardRoomGenerator.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TextEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TextMapper.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sfml_game\TileMapEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\VampireEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WitchBlastGame.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WitchEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ZombieDarkEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ZombieEntity.h">
+      <Filter>Source Files\WitchBlast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\AudioDevice.hpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderFlac.hpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderOgg.hpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderWav.hpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterFlac.hpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterOgg.hpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterWav.hpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\ALCheck.hpp">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\GLCheck.hpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\GLExtensions.hpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\GLLoader.hpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\ImageLoader.hpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImpl.hpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImplDefault.hpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImplFBO.hpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\TextureSaver.hpp">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Network\SocketImpl.hpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Network\Unix\SocketImpl.hpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Network\Win32\SocketImpl.hpp">
+      <Filter>Source Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Android\Activity.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Android\ResourceStream.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\ClockImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\MutexImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\SleepImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\ThreadImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\ThreadLocalImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\ClockImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\MutexImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\SleepImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\ThreadImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\ThreadLocalImpl.hpp">
+      <Filter>Source Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\CursorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\EGLCheck.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\EglContext.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\GlContext.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\InputImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\JoystickImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\JoystickManager.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\SensorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\SensorManager.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\VideoModeImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\WindowImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\ClipboardImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\CursorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\InputImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\JoystickImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\SensorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\WindowImplAndroid.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\FreeBSD\JoystickImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\ClipboardImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\CursorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\EaglContext.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\InputImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\JoystickImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\ObjCType.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SensorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SFAppDelegate.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SFMain.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SFView.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SFViewController.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\WindowImplUIKit.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OpenBSD\JoystickImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\AutoreleasePoolWrapper.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\cg_sf_conversion.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\ClipboardImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\cpp_objc_conversion.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\CursorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\HIDInputManager.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\HIDJoystickManager.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\InputImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\JoystickImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\NSImage+raw.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\Scaling.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SensorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFApplication.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFApplicationDelegate.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFContext.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFKeyboardModifiersHelper.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFOpenGLView+keyboard_priv.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFOpenGLView+mouse_priv.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFOpenGLView.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFSilentResponder.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFViewController.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFWindow.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFWindowController.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\WindowImplCocoa.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\WindowImplDelegateProtocol.h">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\ClipboardImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\CursorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\Display.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\GlxContext.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\GlxExtensions.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\InputImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\JoystickImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\SensorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\WindowImplX11.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\ClipboardImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\CursorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\InputImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\JoystickImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\SensorImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\WglContext.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\WglExtensions.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\WindowImplWin32.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\ClipboardImpl.hpp">
+      <Filter>Source Files\SFML\Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\SFML-2.5.1\src\SFML\Audio\CMakeLists.txt">
+      <Filter>Source Files\SFML\Audio</Filter>
+    </Text>
+    <Text Include="..\SFML-2.5.1\src\SFML\Graphics\GLExtensions.txt">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </Text>
+    <Text Include="..\SFML-2.5.1\src\SFML\Graphics\CMakeLists.txt">
+      <Filter>Source Files\SFML\Graphics</Filter>
+    </Text>
+    <Text Include="..\SFML-2.5.1\src\SFML\Main\CMakeLists.txt">
+      <Filter>Source Files\SFML\Main</Filter>
+    </Text>
+    <Text Include="..\SFML-2.5.1\src\SFML\Network\CMakeLists.txt">
+      <Filter>Source Files\SFML\Network</Filter>
+    </Text>
+    <Text Include="..\SFML-2.5.1\src\SFML\System\CMakeLists.txt">
+      <Filter>Source Files\SFML\System</Filter>
+    </Text>
+    <Text Include="..\SFML-2.5.1\src\SFML\Window\CMakeLists.txt">
+      <Filter>Source Files\SFML\Window</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SFML-2.5.1\src\SFML\Main\MainiOS.mm">
+      <Filter>Source Files\SFML\Main</Filter>
+    </None>
+  </ItemGroup>
+</Project>

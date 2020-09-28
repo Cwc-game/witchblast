@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d18157fc-4ca5-479a-a247-d7daf3a0275b}</ProjectGuid>
+    <RootNamespace>WitchBlast</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\_Project\Vellum\witchblast\SFML-2.5.1\src;E:\_Project\Vellum\witchblast\src;E:\_Project\Vellum\witchblast\SFML-2.5.1\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\ALCheck.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\AlResource.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\AudioDevice.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\InputSoundFile.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\Listener.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\Music.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\OutputSoundFile.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\Sound.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundBuffer.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundBufferRecorder.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileFactory.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderFlac.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderOgg.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderWav.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterFlac.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterOgg.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterWav.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundRecorder.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundSource.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Audio\SoundStream.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\BlendMode.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\CircleShape.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Color.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\ConvexShape.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Font.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\GLCheck.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\GLExtensions.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\GLLoader.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Glsl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Image.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\ImageLoader.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RectangleShape.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderStates.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTarget.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTexture.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImplDefault.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImplFBO.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\RenderWindow.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Shader.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Shape.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Sprite.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Text.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Texture.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\TextureSaver.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Transform.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Transformable.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\Vertex.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\VertexArray.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\VertexBuffer.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Graphics\View.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Main\MainAndroid.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Main\MainWin32.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Main\SFMLActivity.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Ftp.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Http.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\IpAddress.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Packet.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Socket.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\SocketSelector.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\TcpListener.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\TcpSocket.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\UdpSocket.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Unix\SocketImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Network\Win32\SocketImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Android\Activity.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Android\NativeActivity.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Android\ResourceStream.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Clock.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Err.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\FileInputStream.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Lock.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\MemoryInputStream.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Mutex.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Sleep.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\String.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Thread.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\ThreadLocal.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Time.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\ClockImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\MutexImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\SleepImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\ThreadImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Unix\ThreadLocalImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\ClockImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\MutexImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\SleepImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\ThreadImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\System\Win32\ThreadLocalImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\ClipboardImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\CursorImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\InputImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\JoystickImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\SensorImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\VideoModeImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Android\WindowImplAndroid.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Clipboard.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Context.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Cursor.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\EGLCheck.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\EglContext.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\FreeBSD\JoystickImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\GlContext.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\GlResource.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\iOS\CursorImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Joystick.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\JoystickManager.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Keyboard.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Mouse.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OpenBSD\JoystickImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OSX\HIDJoystickManager.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OSX\JoystickImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OSX\SensorImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\OSX\VideoModeImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Sensor.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\SensorManager.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Touch.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\ClipboardImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\CursorImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\Display.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\GlxContext.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\GlxExtensions.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\InputImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\JoystickImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\SensorImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\VideoModeImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Unix\WindowImplX11.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\VideoMode.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\ClipboardImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\CursorImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\InputImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\JoystickImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\SensorImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\VideoModeImpl.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\WglContext.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\WglExtensions.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Win32\WindowImplWin32.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\Window.cpp" />
+    <ClCompile Include="..\SFML-2.5.1\src\SFML\Window\WindowImpl.cpp" />
+    <ClCompile Include="..\src\ArtefactDescriptionEntity.cpp" />
+    <ClCompile Include="..\src\BaseCreatureEntity.cpp" />
+    <ClCompile Include="..\src\BatEntity.cpp" />
+    <ClCompile Include="..\src\BlackRatEntity.cpp" />
+    <ClCompile Include="..\src\BogeymanEntity.cpp" />
+    <ClCompile Include="..\src\BoltEntity.cpp" />
+    <ClCompile Include="..\src\BubbleEntity.cpp" />
+    <ClCompile Include="..\src\ButcherEntity.cpp" />
+    <ClCompile Include="..\src\CauldronEntity.cpp" />
+    <ClCompile Include="..\src\ChestEntity.cpp" />
+    <ClCompile Include="..\src\Config.cpp" />
+    <ClCompile Include="..\src\CyclopsEntity.cpp" />
+    <ClCompile Include="..\src\DoorEntity.cpp" />
+    <ClCompile Include="..\src\DungeonMap.cpp" />
+    <ClCompile Include="..\src\DungeonMapEntity.cpp" />
+    <ClCompile Include="..\src\EffectZoneEntity.cpp" />
+    <ClCompile Include="..\src\EnemyBoltEntity.cpp" />
+    <ClCompile Include="..\src\EnemyEntity.cpp" />
+    <ClCompile Include="..\src\EvilFlowerEntity.cpp" />
+    <ClCompile Include="..\src\ExplosionEntity.cpp" />
+    <ClCompile Include="..\src\FairyEntity.cpp" />
+    <ClCompile Include="..\src\FallingRockEntity.cpp" />
+    <ClCompile Include="..\src\FranckyEntity.cpp" />
+    <ClCompile Include="..\src\GameFloor.cpp" />
+    <ClCompile Include="..\src\GhostEntity.cpp" />
+    <ClCompile Include="..\src\GiantSlimeEntity.cpp" />
+    <ClCompile Include="..\src\GiantSpiderEntity.cpp" />
+    <ClCompile Include="..\src\GreenRatEntity.cpp" />
+    <ClCompile Include="..\src\ImpEntity.cpp" />
+    <ClCompile Include="..\src\ItemEntity.cpp" />
+    <ClCompile Include="..\src\KingRatEntity.cpp" />
+    <ClCompile Include="..\src\LargeSlimeEntity.cpp" />
+    <ClCompile Include="..\src\LittleSpiderEntity.cpp" />
+    <ClCompile Include="..\src\MagnetEntity.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\MiniMapEntity.cpp" />
+    <ClCompile Include="..\src\ObstacleEntity.cpp" />
+    <ClCompile Include="..\src\ParticleGenerator.cpp" />
+    <ClCompile Include="..\src\PlayerEntity.cpp" />
+    <ClCompile Include="..\src\PnjEntity.cpp" />
+    <ClCompile Include="..\src\PumpkinEntity.cpp" />
+    <ClCompile Include="..\src\RatEntity.cpp" />
+    <ClCompile Include="..\src\RockMissileEntity.cpp" />
+    <ClCompile Include="..\src\SausageEntity.cpp" />
+    <ClCompile Include="..\src\sfml_game\CollidingSpriteEntity.cpp" />
+    <ClCompile Include="..\src\sfml_game\EntityManager.cpp" />
+    <ClCompile Include="..\src\sfml_game\Game.cpp" />
+    <ClCompile Include="..\src\sfml_game\GameEntity.cpp" />
+    <ClCompile Include="..\src\sfml_game\GameMap.cpp" />
+    <ClCompile Include="..\src\sfml_game\GuiEntity.cpp" />
+    <ClCompile Include="..\src\sfml_game\ImageManager.cpp" />
+    <ClCompile Include="..\src\sfml_game\SoundManager.cpp" />
+    <ClCompile Include="..\src\sfml_game\SpriteEntity.cpp" />
+    <ClCompile Include="..\src\sfml_game\TileMapEntity.cpp" />
+    <ClCompile Include="..\src\SlimeEntity.cpp" />
+    <ClCompile Include="..\src\SlimePetEntity.cpp" />
+    <ClCompile Include="..\src\SnakeEntity.cpp" />
+    <ClCompile Include="..\src\SpiderEggEntity.cpp" />
+    <ClCompile Include="..\src\SpiderWebEntity.cpp" />
+    <ClCompile Include="..\src\TextEntity.cpp" />
+    <ClCompile Include="..\src\TextMapper.cpp" />
+    <ClCompile Include="..\src\VampireEntity.cpp" />
+    <ClCompile Include="..\src\WitchBlastGame.cpp" />
+    <ClCompile Include="..\src\WitchEntity.cpp" />
+    <ClCompile Include="..\src\ZombieDarkEntity.cpp" />
+    <ClCompile Include="..\src\ZombieEntity.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\ALCheck.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\AudioDevice.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderFlac.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderOgg.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileReaderWav.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterFlac.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterOgg.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Audio\SoundFileWriterWav.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\GLCheck.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\GLExtensions.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\GLLoader.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\ImageLoader.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImplDefault.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\RenderTextureImplFBO.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Graphics\TextureSaver.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Network\SocketImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Network\Unix\SocketImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Network\Win32\SocketImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Android\Activity.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Android\ResourceStream.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\ClockImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\MutexImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\SleepImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\ThreadImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Unix\ThreadLocalImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\ClockImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\MutexImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\SleepImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\ThreadImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\System\Win32\ThreadLocalImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\ClipboardImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\CursorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\InputImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\SensorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Android\WindowImplAndroid.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\ClipboardImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\CursorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\EGLCheck.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\EglContext.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\FreeBSD\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\GlContext.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\InputImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\ClipboardImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\CursorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\EaglContext.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\InputImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\ObjCType.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SensorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SFAppDelegate.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SFMain.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SFView.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\SFViewController.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\iOS\WindowImplUIKit.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\JoystickManager.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OpenBSD\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\AutoreleasePoolWrapper.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\cg_sf_conversion.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\ClipboardImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\cpp_objc_conversion.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\CursorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\HIDInputManager.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\HIDJoystickManager.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\InputImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\NSImage+raw.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\Scaling.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SensorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFApplication.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFApplicationDelegate.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFContext.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFKeyboardModifiersHelper.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFOpenGLView+keyboard_priv.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFOpenGLView+mouse_priv.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFOpenGLView.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFSilentResponder.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFViewController.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFWindow.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\SFWindowController.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\WindowImplCocoa.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\OSX\WindowImplDelegateProtocol.h" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\SensorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\SensorManager.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\ClipboardImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\CursorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\Display.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\GlxContext.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\GlxExtensions.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\InputImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\SensorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Unix\WindowImplX11.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\VideoModeImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\ClipboardImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\CursorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\InputImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\SensorImpl.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\WglContext.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\WglExtensions.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\Win32\WindowImplWin32.hpp" />
+    <ClInclude Include="..\SFML-2.5.1\src\SFML\Window\WindowImpl.hpp" />
+    <ClInclude Include="..\src\Achievements.h" />
+    <ClInclude Include="..\src\api\Android.h" />
+    <ClInclude Include="..\src\ArtefactDescriptionEntity.h" />
+    <ClInclude Include="..\src\BaseCreatureEntity.h" />
+    <ClInclude Include="..\src\BatEntity.h" />
+    <ClInclude Include="..\src\BlackRatEntity.h" />
+    <ClInclude Include="..\src\BogeymanEntity.h" />
+    <ClInclude Include="..\src\BoltEntity.h" />
+    <ClInclude Include="..\src\BubbleEntity.h" />
+    <ClInclude Include="..\src\ButcherEntity.h" />
+    <ClInclude Include="..\src\CauldronEntity.h" />
+    <ClInclude Include="..\src\ChestEntity.h" />
+    <ClInclude Include="..\src\Config.h" />
+    <ClInclude Include="..\src\Constants.h" />
+    <ClInclude Include="..\src\CyclopsEntity.h" />
+    <ClInclude Include="..\src\DoorEntity.h" />
+    <ClInclude Include="..\src\DungeonMap.h" />
+    <ClInclude Include="..\src\DungeonMapEntity.h" />
+    <ClInclude Include="..\src\EffectZoneEntity.h" />
+    <ClInclude Include="..\src\EnemyBoltEntity.h" />
+    <ClInclude Include="..\src\EnemyEntity.h" />
+    <ClInclude Include="..\src\EvilFlowerEntity.h" />
+    <ClInclude Include="..\src\ExplosionEntity.h" />
+    <ClInclude Include="..\src\FairyEntity.h" />
+    <ClInclude Include="..\src\FallingRockEntity.h" />
+    <ClInclude Include="..\src\FranckyEntity.h" />
+    <ClInclude Include="..\src\GameFloor.h" />
+    <ClInclude Include="..\src\GhostEntity.h" />
+    <ClInclude Include="..\src\GiantSlimeEntity.h" />
+    <ClInclude Include="..\src\GiantSpiderEntity.h" />
+    <ClInclude Include="..\src\GreenRatEntity.h" />
+    <ClInclude Include="..\src\ImpEntity.h" />
+    <ClInclude Include="..\src\ItemEntity.h" />
+    <ClInclude Include="..\src\Items.h" />
+    <ClInclude Include="..\src\KingRatEntity.h" />
+    <ClInclude Include="..\src\LargeSlimeEntity.h" />
+    <ClInclude Include="..\src\LittleSpiderEntity.h" />
+    <ClInclude Include="..\src\MagnetEntity.h" />
+    <ClInclude Include="..\src\MessageGenerator.h" />
+    <ClInclude Include="..\src\MiniMapEntity.h" />
+    <ClInclude Include="..\src\ObstacleEntity.h" />
+    <ClInclude Include="..\src\ParticleGenerator.h" />
+    <ClInclude Include="..\src\PlayerEntity.h" />
+    <ClInclude Include="..\src\PnjEntity.h" />
+    <ClInclude Include="..\src\PumpkinEntity.h" />
+    <ClInclude Include="..\src\RatEntity.h" />
+    <ClInclude Include="..\src\RockMissileEntity.h" />
+    <ClInclude Include="..\src\SausageEntity.h" />
+    <ClInclude Include="..\src\Scoring.h" />
+    <ClInclude Include="..\src\sfml_game\CollidingSpriteEntity.h" />
+    <ClInclude Include="..\src\sfml_game\EntityManager.h" />
+    <ClInclude Include="..\src\sfml_game\Game.h" />
+    <ClInclude Include="..\src\sfml_game\GameEntity.h" />
+    <ClInclude Include="..\src\sfml_game\GameMap.h" />
+    <ClInclude Include="..\src\sfml_game\GuiEntity.h" />
+    <ClInclude Include="..\src\sfml_game\ImageManager.h" />
+    <ClInclude Include="..\src\sfml_game\MyTools.h" />
+    <ClInclude Include="..\src\sfml_game\SoundManager.h" />
+    <ClInclude Include="..\src\sfml_game\SpriteEntity.h" />
+    <ClInclude Include="..\src\sfml_game\TileMapEntity.h" />
+    <ClInclude Include="..\src\SlimeEntity.h" />
+    <ClInclude Include="..\src\SlimePetEntity.h" />
+    <ClInclude Include="..\src\SnakeEntity.h" />
+    <ClInclude Include="..\src\SpiderEggEntity.h" />
+    <ClInclude Include="..\src\SpiderWebEntity.h" />
+    <ClInclude Include="..\src\StandardRoomGenerator.h" />
+    <ClInclude Include="..\src\TextEntity.h" />
+    <ClInclude Include="..\src\TextMapper.h" />
+    <ClInclude Include="..\src\VampireEntity.h" />
+    <ClInclude Include="..\src\WitchBlastGame.h" />
+    <ClInclude Include="..\src\WitchEntity.h" />
+    <ClInclude Include="..\src\ZombieDarkEntity.h" />
+    <ClInclude Include="..\src\ZombieEntity.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\SFML-2.5.1\src\SFML\Audio\CMakeLists.txt" />
+    <Text Include="..\SFML-2.5.1\src\SFML\Graphics\CMakeLists.txt" />
+    <Text Include="..\SFML-2.5.1\src\SFML\Graphics\GLExtensions.txt" />
+    <Text Include="..\SFML-2.5.1\src\SFML\Main\CMakeLists.txt" />
+    <Text Include="..\SFML-2.5.1\src\SFML\Network\CMakeLists.txt" />
+    <Text Include="..\SFML-2.5.1\src\SFML\System\CMakeLists.txt" />
+    <Text Include="..\SFML-2.5.1\src\SFML\Window\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SFML-2.5.1\src\SFML\Main\MainiOS.mm" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
