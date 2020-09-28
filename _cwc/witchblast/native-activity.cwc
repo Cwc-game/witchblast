@@ -1,0 +1,77 @@
+;Register Cwc before using a .cwMake
+>
+-#Run Build_Android.cwc -{_wToolchain}= VLianceTool/DroidRT
+>
+-{sPckName}=com.example.native_activity
+-{sMainActivity}=android.app.NativeActivity
+-{sApkName}= App.apk
+>
+-{pJava}= native-activity/
+-{pObj}= obj/java/
+-{pBinOut}= _out/{_sPlatform}_{_sOpt}/
+>
+-{sKeyFile}= MyKey.keystore
+-{sKeyAlias}= Adroid_TestApp
+-{sKeyPass}= 123456
+>
+;Build main
+;-c {pJava}jni/ -o obj/cpp_{_sPlatform}_{_sOpt}/javaWrapper/ -I obj/cw/
+;-I {_pDroidRT_Glue}
+;-fPIC
+>
+-o obj/cpp_{_sPlatform}_{_sOpt}/ -#To {pBinOut}App.so
+-L {pSFML_extlibs}libs-android/armeabi-v7a/
+-lfreetype
+-lFLAC
+-lopenal
+-lvorbisfile
+-lvorbisenc
+-lvorbis
+-logg
+-llog -landroid -lGLESv2 -lGLESv1_CM -lEGL 
+>
+-#Copy {pBinOut}App.so {pObj}build/apk/{pLib_ABI}libnative-activity.so
+-#Copy {pSFML_extlibs}libs-android/armeabi-v7a/libopenal.so {pObj}build/apk/{pLib_ABI}libopenal.so
+>
+res -M "{pJava}AndroidManifest.xml" -S "{pJava}res" -J "{pJava}"
+>
+javac -cp ".;{pJava};" "{pJava}src/com/example/native_activity/R.java" -d {pObj}class/
+>
+dx --output={pObj}build/apk/classes.dex {pObj}class/
+>
+apk -M "{pJava}AndroidManifest.xml" -S "{pJava}res" -F "{pObj}build/Bin.unaligned.apk" "{pObj}build/apk"
+>
+;Insert assets
+7z a "{pObj}build/Bin.unaligned.apk" assets/
+>
+zipalign "{pObj}build/Bin.unaligned.apk" "{pObj}build/Bin.aligned.apk"
+>
+keytool -genkeypair -dname "cn=MyName, ou=MyOrgUnit, o=MyOrg, c=US"
+    -alias {sKeyAlias}
+    -keystore {pJava}{sKeyFile}
+	-keypass   {sKeyPass}
+    -storepass {sKeyPass} 
+	-keyalg RSA -keysize 2048
+	-validity 180
+>
+apksigner --ks "{pJava}{sKeyFile}" --ks-key-alias {sKeyAlias} --ks-pass pass:"{sKeyPass}" 
+		  --out "{pBinOut}{sApkName}" "{pObj}build/Bin.aligned.apk" 
+>
+aapt list	    "{pBinOut}{sApkName}"
+>
+adb devices
+>
+adb install -r  "{pBinOut}{sApkName}"
+>
+adb logcat -b crash --clear
+>
+adb shell am start -n {sPckName}/{sMainActivity}
+>
+adb shell pidof -s {sPckName}  -#RetryForInput
+>
+adb logcat --pid=[adb shell pidof -s {sPckName}] -#CloseWhen "beginning of crash"
+>
+adb logcat -b crash -v time -d
+>
+ndk-stack -sym {pObj}build/apk/{pLib_ABI} [<< adb logcat -b crash -v time -d ]
+>

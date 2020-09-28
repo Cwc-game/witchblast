@@ -1,0 +1,8 @@
+;Register Cwc before using a .cwMake
+>
+-{_sOpt}="O2"
+>
+-#Run Build_Android.cwc -{_wToolchain}= VLianceTool/DroidRT
+>
+-#Run native-activity.cwc
+>
