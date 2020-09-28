@@ -1,3 +1,6 @@
+_out/
+assets/
+
 *.cbp
 *.depend
 *.layout

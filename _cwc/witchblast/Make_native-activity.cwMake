@@ -43,6 +43,9 @@ dx --output={pObj}build/apk/classes.dex {pObj}class/
 >
 apk -M "{pJava}AndroidManifest.xml" -S "{pJava}res" -F "{pObj}build/Bin.unaligned.apk" "{pObj}build/apk"
 >
+;Insert assets
+7z a "{pObj}build/Bin.unaligned.apk" assets/
+>
 zipalign "{pObj}build/Bin.unaligned.apk" "{pObj}build/Bin.aligned.apk"
 >
 keytool -genkeypair -dname "cn=MyName, ou=MyOrgUnit, o=MyOrg, c=US"
