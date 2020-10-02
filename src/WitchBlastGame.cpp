@@ -3968,6 +3968,10 @@ void WitchBlastGame::startGame()
 
   prepareIntro();
 
+//////////////
+startNewGame(true, 1); quitGame();
+///////////////
+
   // Start game loop
   while (app->isOpen())
   {

@@ -250,12 +250,17 @@ void RenderTarget::draw(const Vertex* vertices, std::size_t vertexCount,
     if (!vertices || (vertexCount == 0))
         return;
 
+    bool _bQuad = false;
     // GL_QUADS is unavailable on OpenGL ES
     #ifdef SFML_OPENGL_ES
         if (type == Quads)
         {
-            err() << "sf::Quads primitive type is not supported on OpenGL ES platforms, drawing skipped" << std::endl;
-            return;
+            //->Simulate Quads
+            // err() << "sf::Quads1 primitive type is not supported on OpenGL ES platforms, drawing skipped" << std::endl;
+            type = TriangleStrip;
+            
+            _bQuad = true;
+           // return;
         }
     #endif
 
@@ -266,15 +271,44 @@ void RenderTarget::draw(const Vertex* vertices, std::size_t vertexCount,
 
         if (useVertexCache)
         {
+            int count = 0;
             // Pre-transform the vertices and store them into the vertex cache
-            for (std::size_t i = 0; i < vertexCount; ++i)
-            {
-                Vertex& vertex = m_cache.vertexCache[i];
-                vertex.position = states.transform * vertices[i].position;
-                vertex.color = vertices[i].color;
-                vertex.texCoords = vertices[i].texCoords;
+
+            if (_bQuad) {
+                m_cache.vertexCache[0].position     = states.transform * vertices[0].position;
+                m_cache.vertexCache[0].color        = vertices[0].color;
+                m_cache.vertexCache[0].texCoords    = vertices[0].texCoords;
+                
+                m_cache.vertexCache[1].position = states.transform * vertices[3].position;
+                m_cache.vertexCache[1].color = vertices[3].color;
+                m_cache.vertexCache[1].texCoords = vertices[3].texCoords;
+                
+                m_cache.vertexCache[2].position = states.transform * vertices[1].position;
+                m_cache.vertexCache[2].color = vertices[1].color;
+                m_cache.vertexCache[2].texCoords = vertices[1].texCoords;
+
+                m_cache.vertexCache[3].position = states.transform * vertices[2].position;
+                m_cache.vertexCache[3].color = vertices[2].color;
+                m_cache.vertexCache[3].texCoords = vertices[2].texCoords;
+
+                   
+            }else{
+                for (std::size_t i = 0; i < vertexCount; ++i){
+                    Vertex& vertex = m_cache.vertexCache[i];
+                    vertex.position = states.transform * vertices[i].position;
+                    vertex.color = vertices[i].color;
+                    vertex.texCoords = vertices[i].texCoords;
+                }
             }
+
+
+
         }
+
+
+    
+
+
 
         setupDraw(useVertexCache, states);
 
@@ -354,7 +388,7 @@ void RenderTarget::draw(const VertexBuffer& vertexBuffer, std::size_t firstVerte
     #ifdef SFML_OPENGL_ES
         if (vertexBuffer.getPrimitiveType() == Quads)
         {
-            err() << "sf::Quads primitive type is not supported on OpenGL ES platforms, drawing skipped" << std::endl;
+            err() << "sf::Quads2 primitive type is not supported on OpenGL ES platforms, drawing skipped" << std::endl;
             return;
         }
     #endif

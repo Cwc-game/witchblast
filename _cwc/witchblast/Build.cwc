@@ -1,6 +1,8 @@
 >
 -{pObj_WB}:=obj/cpp_{_sPlatform}_{_sOpt}/
 >
+-{pOut_WB}:=_out/{_sPlatform}_{_sOpt}/
+>
 -#Run "../sfml/Build_SFML.cwc"
 >
 -{vFlag}=
@@ -20,11 +22,11 @@
 -{vIncl}
 -{vFlag}
 >
--#Copy {pMedia} media/
--#Copy {pData} data/
+-#Copy {pMedia} {pOut_WB}media/
+-#Copy {pData}  {pOut_WB}data/
 >
 ;Generate executable
--o obj/cpp_{_sPlatform}_{_sOpt}/ -#To _out/{_sPlatform}_{_sOpt}/App.*
+-o {pObj_WB} -#To {pOut_WB}/App.*
 -L {pSFML_extlibs}libs-mingw/x86/
 -lFLAC
 -lfreetype
