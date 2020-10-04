@@ -246,35 +246,43 @@ void RenderTarget::draw(const Drawable& drawable, const RenderStates& states)
 void RenderTarget::draw(const Vertex* vertices, std::size_t vertexCount,
                         PrimitiveType type, const RenderStates& states)
 {
+
+   static  Vertex    quad_vertexCache[10024] = {};
+
+
     // Nothing to draw?
     if (!vertices || (vertexCount == 0))
         return;
 
     bool _bQuad = false;
     // GL_QUADS is unavailable on OpenGL ES
-    #ifdef SFML_OPENGL_ES
+  //  #ifdef SFML_OPENGL_ES
         if (type == Quads)
         {
             //->Simulate Quads
             // err() << "sf::Quads1 primitive type is not supported on OpenGL ES platforms, drawing skipped" << std::endl;
-            type = TriangleStrip;
+            type = Triangles;
             
             _bQuad = true;
            // return;
         }
-    #endif
+ //   #endif
 
     if (isActive(m_id) || setActive(true))
     {
         // Check if the vertex count is low enough so that we can pre-transform them
         bool useVertexCache = (vertexCount <= StatesCache::VertexCacheSize);
+        useVertexCache = false;
 
-        if (useVertexCache)
-        {
+
+
+        if (useVertexCache) {
             int count = 0;
             // Pre-transform the vertices and store them into the vertex cache
 
             if (_bQuad) {
+				/*
+			printf("\n verices: %d \n" , vertexCount);
                 m_cache.vertexCache[0].position     = states.transform * vertices[0].position;
                 m_cache.vertexCache[0].color        = vertices[0].color;
                 m_cache.vertexCache[0].texCoords    = vertices[0].texCoords;
@@ -290,7 +298,7 @@ void RenderTarget::draw(const Vertex* vertices, std::size_t vertexCount,
                 m_cache.vertexCache[3].position = states.transform * vertices[2].position;
                 m_cache.vertexCache[3].color = vertices[2].color;
                 m_cache.vertexCache[3].texCoords = vertices[2].texCoords;
-
+                */
                    
             }else{
                 for (std::size_t i = 0; i < vertexCount; ++i){
@@ -329,14 +337,64 @@ void RenderTarget::draw(const Vertex* vertices, std::size_t vertexCount,
             const char* data = reinterpret_cast<const char*>(vertices);
 
             // If we pre-transform the vertices, we must use our internal vertex cache
-            if (useVertexCache)
+            if (useVertexCache){
                 data = reinterpret_cast<const char*>(m_cache.vertexCache);
+            }
+            /*
+            quad 0 1 2 3
+            ==>
+            triangle 0 1 2
+            triangle 2 3 0
+            */  
+
+
+            if(_bQuad){
+
+                size_t quadtri_vertexCount = vertexCount /4 * 6;
+
+                //  printf("\n verices: %d \n", vertexCount);
+
+                int j = 0;
+                int idx = 0;
+
+                for (std::size_t i = 0; i < quadtri_vertexCount; ++i) {
+
+                    Vertex& slot = quad_vertexCache[i];
+
+                     Vertex* vertex = (Vertex*)&vertices[idx];
+
+                    if (j == 3) {//3 is duplicate
+                        vertex = (Vertex*)&vertices[idx-1];
+                       // idx++;
+
+                   }else if (j == 5) {//5 is first
+                       vertex = (Vertex*)&vertices[idx - 4];
+                    }else{
+                        idx++;
+                    }
+
+                    slot.position = states.transform * vertex->position;
+                    slot.color = vertex->color;
+                    slot.texCoords = vertex->texCoords;
+                    
+                    j++;
+                    if (j == 6) {
+                        j = 0;
+                    }
+                }
+                    
+                vertexCount= quadtri_vertexCount;
+                data = reinterpret_cast<const char*>(quad_vertexCache);
+            }
+
 
             glCheck(glVertexPointer(2, GL_FLOAT, sizeof(Vertex), data + 0));
             glCheck(glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(Vertex), data + 8));
             if (enableTexCoordsArray)
                 glCheck(glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex), data + 12));
+            
         }
+        
         else if (enableTexCoordsArray && !m_cache.texCoordsArrayEnabled)
         {
             // If we enter this block, we are already using our internal vertex cache
