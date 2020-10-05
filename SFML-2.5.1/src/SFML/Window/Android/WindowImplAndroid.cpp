@@ -49,21 +49,23 @@ namespace priv
 WindowImplAndroid* WindowImplAndroid::singleInstance = NULL;
 
 ////////////////////////////////////////////////////////////
-WindowImplAndroid::WindowImplAndroid(WindowHandle handle)
+WindowImplAndroid::WindowImplAndroid(Window* _parent, WindowHandle handle)
 : m_size(0, 0)
 , m_windowBeingCreated(false)
 , m_windowBeingDestroyed(false)
 , m_hasFocus(false)
+, m_window(_parent)
 {
 }
 
 
 ////////////////////////////////////////////////////////////
-WindowImplAndroid::WindowImplAndroid(VideoMode mode, const String& title, unsigned long style, const ContextSettings& settings)
+WindowImplAndroid::WindowImplAndroid(Window* _parent, VideoMode mode, const String& title, unsigned long style, const ContextSettings& settings)
 : m_size(mode.width, mode.height)
 , m_windowBeingCreated(false)
 , m_windowBeingDestroyed(false)
 , m_hasFocus(false)
+, m_window(_parent)
 {
     ActivityStates* states = getActivity(NULL);
     Lock lock(states->mutex);
@@ -224,11 +226,13 @@ void WindowImplAndroid::forwardEvent(const Event& event)
         WindowImplAndroid::singleInstance->m_size.y = ANativeWindow_getHeight(states->window);
         WindowImplAndroid::singleInstance->m_windowBeingCreated = true;
         WindowImplAndroid::singleInstance->m_hasFocus = true;
+		WindowImplAndroid::singleInstance->m_window->setActive(true);
     }
     else if (event.type == Event::LostFocus)
     {
         WindowImplAndroid::singleInstance->m_windowBeingDestroyed = true;
         WindowImplAndroid::singleInstance->m_hasFocus = false;
+		WindowImplAndroid::singleInstance->m_window->setActive(false);
     }
 
     WindowImplAndroid::singleInstance->pushEvent(event);

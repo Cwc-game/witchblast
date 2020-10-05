@@ -121,7 +121,7 @@ void Window::create(VideoMode mode, const String& title, Uint32 style, const Con
     #endif
 
     // Recreate the window implementation
-    m_impl = priv::WindowImpl::create(mode, title, style, settings);
+    m_impl = priv::WindowImpl::create(this, mode, title, style, settings);
 
     // Recreate the context
     m_context = priv::GlContext::create(settings, m_impl, mode.bitsPerPixel);
@@ -138,7 +138,7 @@ void Window::create(WindowHandle handle, const ContextSettings& settings)
     close();
 
     // Recreate the window implementation
-    m_impl = priv::WindowImpl::create(handle);
+    m_impl = priv::WindowImpl::create(this, handle);
 
     // Recreate the context
     m_context = priv::GlContext::create(settings, m_impl, VideoMode::getDesktopMode().bitsPerPixel);

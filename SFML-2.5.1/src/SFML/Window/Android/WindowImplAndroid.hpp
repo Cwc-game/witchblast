@@ -53,7 +53,7 @@ public:
     /// \param handle Platform-specific handle of the control
     ///
     ////////////////////////////////////////////////////////////
-    WindowImplAndroid(WindowHandle handle);
+    WindowImplAndroid(Window* _parent, WindowHandle handle);
 
     ////////////////////////////////////////////////////////////
     /// \brief Create the window implementation
@@ -64,7 +64,7 @@ public:
     /// \param settings Additional settings for the underlying OpenGL context
     ///
     ////////////////////////////////////////////////////////////
-    WindowImplAndroid(VideoMode mode, const String& title, unsigned long style, const ContextSettings& settings);
+    WindowImplAndroid(Window* _parent, VideoMode mode, const String& title, unsigned long style, const ContextSettings& settings);
 
     ////////////////////////////////////////////////////////////
     /// \brief Destructor
@@ -236,6 +236,7 @@ private:
     static int getUnicode(AInputEvent* event);
 
     Vector2u m_size;
+    Window* m_window;
     bool m_windowBeingCreated;
     bool m_windowBeingDestroyed;
     bool m_hasFocus;
