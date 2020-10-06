@@ -110,14 +110,23 @@ void WindowImplAndroid::processEvents()
 
     if (m_windowBeingCreated)
     {
+        err() << "--------m_windowBeingCreated!" << std::endl;
+        priv::GlContext::initResource(true);
+        WindowImplAndroid::singleInstance->m_window->setActive(true);
         states->context->createSurface(states->window);
         m_windowBeingCreated = false;
     }
 
     if (m_windowBeingDestroyed)
     {
+        err() << "--------m_windowBeingDestroyed!" << std::endl;
         states->context->destroySurface();
         m_windowBeingDestroyed = false;
+
+       // sf::RenderWindow::set
+
+        priv::GlContext::cleanupResource();
+
     }
 
     states->updated = true;
@@ -226,7 +235,10 @@ void WindowImplAndroid::forwardEvent(const Event& event)
         WindowImplAndroid::singleInstance->m_size.y = ANativeWindow_getHeight(states->window);
         WindowImplAndroid::singleInstance->m_windowBeingCreated = true;
         WindowImplAndroid::singleInstance->m_hasFocus = true;
+   
+
 		WindowImplAndroid::singleInstance->m_window->setActive(true);
+       // WindowImplAndroid::singleInstance->processEvents();
     }
     else if (event.type == Event::LostFocus)
     {

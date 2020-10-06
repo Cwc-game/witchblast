@@ -7626,19 +7626,22 @@ bool WitchBlastGame::getPressingState(int p, inputKeyEnum k)
     if (sf::Keyboard::isKeyPressed(input[k])) return true;
   }
 
+    for(int i =0; i< 6; i++){ //6 fingers?! ;)
+        if(sf::Touch::isDown(i)){
 
-if(sf::Touch::isDown(0)){
-
-      if (k == KeyLeft && sf::Touch::getPosition(0).x < 100) return true;
-      if (k == KeyRight && sf::Touch::getPosition(0).x > 400) return true;
-      if (k == KeyUp && sf::Touch::getPosition(0).y < 100) return true;
-      if (k == KeyDown && sf::Touch::getPosition(0).y > 200) return true;
+            if (k == KeyLeft && sf::Touch::getPosition(i).x < 100) return true;
+            if (k == KeyRight && sf::Touch::getPosition(i).x > 400) return true;
+            if (k == KeyUp && sf::Touch::getPosition(i).y < 100) return true;
+            if (k == KeyDown && sf::Touch::getPosition(i).y > 200) return true;
 
 
-     // if (k == KeyRight && sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) return true;
-     // if (k == KeyUp && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) return true;
-     // if (k == KeyDown && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) return true;
-  }
+            if (k == KeyFireDown && sf::Touch::getPosition(i).y > 200  &&  sf::Touch::getPosition(i).x > 400) return true;
+
+            // if (k == KeyRight && sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) return true;
+            // if (k == KeyUp && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) return true;
+            // if (k == KeyDown && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) return true;
+        }
+    }
 
 
 

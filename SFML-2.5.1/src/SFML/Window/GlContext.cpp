@@ -139,7 +139,7 @@ namespace
     sf::Mutex mutex;
 
     // OpenGL resources counter
-    unsigned int resourceCount = 0;
+    int resourceCount = 0;
 
     // This per-thread variable holds the current context for each thread
     sf::ThreadLocalPtr<sf::priv::GlContext> currentContext(NULL);
@@ -239,21 +239,23 @@ namespace sf
 namespace priv
 {
 ////////////////////////////////////////////////////////////
-void GlContext::initResource()
+void GlContext::initResource(bool _bForceRecreate )
 {
     // Protect from concurrent access
     Lock lock(mutex);
 
     // If this is the very first resource, trigger the global context initialization
-    if (resourceCount == 0)
-    {
+   // if (true) {
+    if (resourceCount == 0 || _bForceRecreate) {
         if (sharedContext)
         {
             // Increment the resources counter
             resourceCount++;
 
-            return;
+      //      return;
         }
+
+        err() << "--***---initResource!" << std::endl;
 
         // Create the shared context
         sharedContext = new ContextType(NULL);
@@ -324,7 +326,7 @@ void GlContext::cleanupResource()
     resourceCount--;
 
     // If there's no more resource alive, we can trigger the global context cleanup
-    if (resourceCount == 0)
+    if (resourceCount <= 0)
     {
         if (!sharedContext)
             return;

@@ -154,6 +154,10 @@ void eglCheckError(const char* file, unsigned int line)
               << fileString.substr(fileString.find_last_of("\\/") + 1) << " (" << line << ") : "
               << error << ", " << description
               << std::endl;
+
+        //Explicit crash
+        int* crash = 0; crash[5] = 1;
+
     }
 }
 

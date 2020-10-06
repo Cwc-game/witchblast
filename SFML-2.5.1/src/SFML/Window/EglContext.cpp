@@ -178,9 +178,11 @@ EglContext::~EglContext()
 ////////////////////////////////////////////////////////////
 bool EglContext::makeCurrent(bool current)
 {
-    if (current)
+    if (current){
+   //     err() << "makeCurrent EGL" << std::endl;
         return m_surface != EGL_NO_SURFACE && eglCheck(eglMakeCurrent(m_display, m_surface, m_surface, m_context));
-
+     }
+ //   err() << "makeCurrent EGL ( current = false)" << std::endl;
     return m_surface != EGL_NO_SURFACE && eglCheck(eglMakeCurrent(m_display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT));
 }
 
@@ -188,8 +190,11 @@ bool EglContext::makeCurrent(bool current)
 ////////////////////////////////////////////////////////////
 void EglContext::display()
 {
-    if (m_surface != EGL_NO_SURFACE)
+    if (m_surface != EGL_NO_SURFACE){
+      //  err() << "display surface" << std::endl;
         eglCheck(eglSwapBuffers(m_display, m_surface));
+        
+    }
 }
 
 
@@ -220,19 +225,37 @@ void EglContext::createContext(EglContext* shared)
 
     // Create EGL context
     m_context = eglCheck(eglCreateContext(m_display, m_config, toShared, contextVersion));
+
+
+
 }
 
 
 ////////////////////////////////////////////////////////////
 void EglContext::createSurface(EGLNativeWindowType window)
 {
+   
+    
+
+    err() << "createSurface!" << std::endl;
     m_surface = eglCheck(eglCreateWindowSurface(m_display, m_config, window, NULL));
+
+
+    static int  i = 0;
+    i++;
+    if(i == 2){
+      //  int* crash = 0; crash[5]= 5;
+        
+    }
 }
 
 
 ////////////////////////////////////////////////////////////
 void EglContext::destroySurface()
 {
+
+    err() << "destroySurface!" << std::endl;
+
     eglCheck(eglDestroySurface(m_display, m_surface));
     m_surface = EGL_NO_SURFACE;
 

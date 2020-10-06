@@ -57,7 +57,7 @@ public:
     /// sure that everything is ready for contexts to work properly.
     ///
     ////////////////////////////////////////////////////////////
-    static void initResource();
+    static void initResource(bool _bForceRecreate = false);
 
     ////////////////////////////////////////////////////////////
     /// \brief Perform resource cleanup

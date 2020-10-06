@@ -123,11 +123,13 @@ void Window::create(VideoMode mode, const String& title, Uint32 style, const Con
     // Recreate the window implementation
     m_impl = priv::WindowImpl::create(this, mode, title, style, settings);
 
+    err() << "Recreate the context #1" << std::endl;
     // Recreate the context
     m_context = priv::GlContext::create(settings, m_impl, mode.bitsPerPixel);
 
     // Perform common initializations
     initialize();
+
 }
 
 
@@ -140,6 +142,7 @@ void Window::create(WindowHandle handle, const ContextSettings& settings)
     // Recreate the window implementation
     m_impl = priv::WindowImpl::create(this, handle);
 
+    err() << "Recreate the context #2" << std::endl;
     // Recreate the context
     m_context = priv::GlContext::create(settings, m_impl, VideoMode::getDesktopMode().bitsPerPixel);
 
