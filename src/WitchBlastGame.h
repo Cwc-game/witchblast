@@ -379,7 +379,7 @@ public:
    *  \param yShadow : offset of the shadow (y)
    *  \param maxWidth : max width of the text image (0 = no limit)
    */
-  void write(std::string str, int size, float x, float y, int align, sf::Color color, sf::RenderTarget* app, int xShadow = 0, int yShadow = 0, int maxWidth = 0);
+  void write(std::string str, int size, float x, float y, int align, sf::Color color, sf::RenderTarget* app, int xShadow = 0, int yShadow = 0, int maxWidth = 0, bool relative = false);
 
   void writeGraphic(std::string str, int size, float x, float y, int align, sf::Color color, sf::RenderTarget* app, int xShadow = 0, int yShadow = 0, int maxWidth = 0);
 

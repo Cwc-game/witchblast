@@ -38,14 +38,14 @@ namespace sf
 namespace priv
 {
 ////////////////////////////////////////////////////////////
-WindowImplUIKit::WindowImplUIKit(WindowHandle handle)
+WindowImplUIKit::WindowImplUIKit(Window* _parent, WindowHandle handle)
 {
     // Not implemented
 }
 
 
 ////////////////////////////////////////////////////////////
-WindowImplUIKit::WindowImplUIKit(VideoMode mode,
+WindowImplUIKit::WindowImplUIKit(Window* _parent, VideoMode mode,
                                  const String& title,
                                  unsigned long style,
                                  const ContextSettings& /*settings*/)

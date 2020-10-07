@@ -28,7 +28,7 @@ Game::Game()
 
 void Game::create(int screenWidth, int screenHeight, std::string windowsTitle, bool fullScreen, bool vsync)
 {
-  this->screenWidth = screenWidth;
+  this->screenWidth = screenWidth+500;
   this->screenHeight = screenHeight;
 
   if (fullScreen){

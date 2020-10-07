@@ -120,7 +120,7 @@ m_showCursor(true)
 
 
 ////////////////////////////////////////////////////////////
-WindowImplCocoa::WindowImplCocoa(VideoMode mode,
+WindowImplCocoa::WindowImplCocoa(Window* _parent, VideoMode mode,
                                  const String& title,
                                  unsigned long style,
                                  const ContextSettings& /*settings*/) :

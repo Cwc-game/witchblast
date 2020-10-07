@@ -226,7 +226,7 @@ static sf::View getLetterboxView(sf::View view, int windowWidth, int windowHeigh
 
 static sf::View getFullScreenLetterboxView(sf::View view, int clientWidth, int clientHeight)
 {
-  sf::View returnView(sf::FloatRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
+  sf::View returnView(sf::FloatRect(0, 0, SCREEN_WIDTH , SCREEN_HEIGHT));
 
   float clientRatio = clientWidth / (float) clientHeight;
   float viewRatio = view.getSize().x / (float) view.getSize().y;
@@ -396,6 +396,7 @@ WitchBlastGame::WitchBlastGame()
     "media/win_seal.png",         "media/hof_win_seal.png",
     "media/bag.png",              "media/ui_pause.png",
     "media/score_font.png",       "media/effect_zone.png",
+    "media/arrow_pad.png",
   };
 
   for (const char *const filename : images)
@@ -514,14 +515,14 @@ WitchBlastGame::WitchBlastGame()
 
   uiSprites.shotsSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_HUD_SHOTS));
   uiSprites.topLayer.setTexture(*ImageManager::getInstance().getImage(IMAGE_UI_TOP_LAYER));
-  uiSprites.topLayer.setPosition(0, SCREEN_HEIGHT - 124);
+  uiSprites.topLayer.setPosition(xOffset, yOffset + SCREEN_HEIGHT - 124);
   uiSprites.msgBoxSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_UI_MESSAGE));
   uiSprites.mapBgSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_MAP_BACKGROUND));
-  uiSprites.mapBgSprite.setPosition(342, 23);
+  uiSprites.mapBgSprite.setPosition(xOffset + 342, yOffset + 23);
   uiSprites.pauseSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_UI_PAUSE));
-  uiSprites.pauseSprite.setPosition(SCREEN_WIDTH - 453, 0);
+  uiSprites.pauseSprite.setPosition(xOffset + SCREEN_WIDTH - 453, yOffset);
   uiSprites.bagSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_BAG));
-  uiSprites.bagSprite.setPosition(116, 606);
+  uiSprites.bagSprite.setPosition(xOffset + 116, yOffset + 606);
   uiSprites.numberSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_SCORE_FONT));
 
   introScreenSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_INTRO));
@@ -792,11 +793,12 @@ void WitchBlastGame::startNewGame(bool fromSaveFile, int startingLevel)
 
   // the interface
   uiSprites.gui.setTexture(*ImageManager::getInstance().getImage(IMAGE_INTERFACE));
+  uiSprites.gui.setPosition(xOffset - 5, yOffset - 5);
 
   // key symbol on the interface
   uiSprites.keySprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS_EQUIP));
   uiSprites.keySprite.setTextureRect(sf::IntRect(ITEM_WIDTH * EQUIP_BOSS_KEY, 0,  ITEM_WIDTH, ITEM_HEIGHT));
-  uiSprites.keySprite.setPosition(582, 612);
+  uiSprites.keySprite.setPosition(xOffset + 582, yOffset +  612);
 
   miniMap = new GameMap(FLOOR_WIDTH, FLOOR_HEIGHT);
   // minimap on the interface
@@ -1179,7 +1181,7 @@ void WitchBlastGame::updateIntro()
 void WitchBlastGame::renderIntro()
 {
   app->draw(introScreenSprite);
-  titleSprite.setPosition(SCREEN_WIDTH / 2 - 15, 371);
+  titleSprite.setPosition(xOffset + SCREEN_WIDTH / 2 - 15, yOffset + 371);
   if (introState == 4) app->draw(titleSprite);
   EntityManager::getInstance().render(app);
 }
@@ -1875,7 +1877,7 @@ void WitchBlastGame::renderBossPortrait()
     {
       sf::Sprite bossSprite;
       bossSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_BOSS_PICTURES));
-      bossSprite.setPosition(xBoss, 0);
+      bossSprite.setPosition(xOffset + xBoss, yOffset );
 
       app->draw(bossSprite);
     }
@@ -1996,7 +1998,7 @@ void WitchBlastGame::renderHud()
   {
     sf::Sprite cone;
     cone.setTexture(*ImageManager::getInstance().getImage(IMAGE_LIGHT_CONE));
-    cone.setPosition(player->getX() - 64, player->getY() - 580);
+    cone.setPosition(xOffset + player->getX() - 64, yOffset + player->getY() - 580);
     cone.setColor(sf::Color(255, 255, 255, 255 * fade));
     app->draw(cone, sf::BlendAdd);
   }
@@ -2031,31 +2033,31 @@ void WitchBlastGame::renderScore()
   int scoretemp = scoreDisplayed;
   int n = scoretemp / 10000;
   uiSprites.numberSprite.setTextureRect(sf::IntRect(n * 20, 0, 20, 28));
-  uiSprites.numberSprite.setPosition(x , y);
+  uiSprites.numberSprite.setPosition(xOffset + x , yOffset + y);
   app->draw(uiSprites.numberSprite);
 
   scoretemp %= 10000;
   n = scoretemp / 1000;
   uiSprites.numberSprite.setTextureRect(sf::IntRect(n * 20, 0, 20, 28));
-  uiSprites.numberSprite.setPosition(x + 17, y);
+  uiSprites.numberSprite.setPosition(xOffset + x + 17, yOffset + y);
   app->draw(uiSprites.numberSprite);
 
   scoretemp %= 1000;
   n = scoretemp / 100;
   uiSprites.numberSprite.setTextureRect(sf::IntRect(n * 20, 0, 20, 28));
-  uiSprites.numberSprite.setPosition(x + 2 * 17, y);
+  uiSprites.numberSprite.setPosition(xOffset + x + 2 * 17, yOffset + y);
   app->draw(uiSprites.numberSprite);
 
   scoretemp %= 100;
   n = scoretemp / 10;
   uiSprites.numberSprite.setTextureRect(sf::IntRect(n * 20, 0, 20, 28));
-  uiSprites.numberSprite.setPosition(x + 3 * 17, y);
+  uiSprites.numberSprite.setPosition(xOffset + x + 3 * 17, yOffset + y);
   app->draw(uiSprites.numberSprite);
 
   scoretemp %= 10;
   n = scoretemp;
   uiSprites.numberSprite.setTextureRect(sf::IntRect(n * 20, 0, 20, 28));
-  uiSprites.numberSprite.setPosition(x + 4 * 17, y);
+  uiSprites.numberSprite.setPosition(xOffset + x + 4 * 17, yOffset + y);
   app->draw(uiSprites.numberSprite);
 
   if (scoreBonusTimer > 0.0f)
@@ -2078,7 +2080,7 @@ void WitchBlastGame::renderLifeBar()
 
     sf::RectangleShape rectangle(sf::Vector2f((MAP_WIDTH - 1) * TILE_WIDTH - xBarOffset, 24));
     rectangle.setFillColor(sf::Color(0, 0, 0,128));
-    rectangle.setPosition(sf::Vector2f(TILE_WIDTH / 2 + xBarOffset, label_dy + 22));
+    rectangle.setPosition(sf::Vector2f(xOffset + TILE_WIDTH / 2 + xBarOffset, yOffset + label_dy + 22));
     rectangle.setOutlineThickness(1);
     rectangle.setOutlineColor(sf::Color(200, 200, 200, 200));
     app->draw(rectangle);
@@ -2104,6 +2106,8 @@ void WitchBlastGame::renderRunningGame()
   EntityManager::getInstance().sortByZ();
   getCurrentMapEntity()->computeBoltParticulesVertices();
 
+//if (isPressing(0, KeyUp, false)){ xGame[xGameTypeShake].active = true;}//Test
+
   if (!isPlayerAlive)
   {
     sf::View view = app->getView();
@@ -2118,26 +2122,26 @@ void WitchBlastGame::renderRunningGame()
     else if (endAge > 3.0f)
     {
       view.zoom(1.0f - 0.75f * (4.0f - endAge));
-      float xDiff = view.getCenter().x - player->getX();
-      float yDiff = view.getCenter().y - player->getY();
+      float xDiff = view.getCenter().x - player->getX() - xOffset;
+      float yDiff = view.getCenter().y - player->getY() - yOffset;
       view.setCenter(view.getCenter().x - xDiff * (4.0f - endAge),
                      view.getCenter().y - yDiff * (4.0f - endAge));
     }
     else if (endAge > 1.0f)
     {
       view.zoom(0.25f);
-      view.setCenter(player->getX(), player->getY());
+      view.setCenter(player->getX() + xOffset, player->getY() + yOffset);
     }
     else
     {
       view.zoom(1.0f - 0.75f * endAge);
-      float xDiff = view.getCenter().x - player->getX();
-      float yDiff = view.getCenter().y - player->getY();
+      float xDiff = view.getCenter().x - player->getX() - xOffset;
+      float yDiff = view.getCenter().y - player->getY() - yOffset;
       view.setCenter(view.getCenter().x - xDiff * endAge,
                      view.getCenter().y - yDiff * endAge);
     }
 
-    view.move(-5, -5);
+    view.move(-xOffset, -yOffset);
     app->setView(view);
 
     renderGame();
@@ -2152,7 +2156,7 @@ void WitchBlastGame::renderRunningGame()
 
     view.zoom(0.25f + 0.75f * (gameTime));
 
-    view.move(-5, -5);
+    view.move(-xOffset , -yOffset );
     app->setView(view);
 
     renderGame();
@@ -2165,7 +2169,7 @@ void WitchBlastGame::renderRunningGame()
     sf::View view = app->getView();
     sf::View viewSave = app->getView();
 
-    view.move(-4 + rand() % 9, -4 + rand() % 9);
+    view.move(-xOffset  -4 + rand() % 9, -yOffset -4 + rand() % 9);
     app->setView(view);
 
     renderGame();
@@ -2178,7 +2182,7 @@ void WitchBlastGame::renderRunningGame()
     sf::View view = app->getView();
     sf::View viewSave = app->getView();
 
-    view.move(-OFFSET_X, -OFFSET_Y);
+    view.move(-xOffset, -yOffset);
     app->setView(view);
 
     renderGame();
@@ -2308,6 +2312,11 @@ void WitchBlastGame::renderRunningGame()
 
   writeGraphic(oss.str(), 16, levelStrPosition.x, levelStrPosition.y, ALIGN_CENTER, sf::Color::Black, app, 0, 0, 0);
 
+
+
+
+
+
   //if (gameState == gameStatePlaying)
   {
     sf::Sprite hpSprite;
@@ -2315,7 +2324,7 @@ void WitchBlastGame::renderRunningGame()
     int hpFade = 88.0f * (float)player->getHpDisplay() / (float)player->getHpMax();
     if (hpFade < 0) hpFade = 0;
     else if (hpFade > 88) hpFade = 88;
-    hpSprite.setPosition(477, 619 + 88 - hpFade);
+    hpSprite.setPosition(xOffset + 477, yOffset + 619 + 88 - hpFade);
     hpSprite.setTextureRect(sf::IntRect(0, 88 - hpFade, 88, hpFade));
     app->draw(hpSprite);
 
@@ -2323,11 +2332,22 @@ void WitchBlastGame::renderRunningGame()
     oss << player->getHp() << "/" << player->getHpMax();
     write(oss.str(), 16, 521, 654, ALIGN_CENTER, sf::Color::White, app, 0, 0, 0);
 
+
+    /////////////////////////////////////////
+    sf::Sprite arrowpadSprite;
+    arrowpadSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ARROW_PAD));
+    arrowpadSprite.setPosition(xOffset + -10, yOffset + 319);
+    app->draw(arrowpadSprite);
+    /////////////////////////////////////////
+
+
+
+
     // mana
     sf::Sprite manaSprite;
     manaSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_UI_MANA));
     int manaFade = player->getPercentFireDelay() * 98;
-    manaSprite.setPosition(10, 614 + 98 - manaFade);
+    manaSprite.setPosition(xOffset + 10, yOffset + 614 + 98 - manaFade);
     manaSprite.setTextureRect(sf::IntRect(0, 98 - manaFade, 98, manaFade));
     app->draw(manaSprite);
 
@@ -2336,13 +2356,13 @@ void WitchBlastGame::renderRunningGame()
     {
       sf::Sprite spellSprite;
       spellSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_UI_SPELLS));
-      spellSprite.setPosition(20, 624);
+      spellSprite.setPosition(xOffset + 20, yOffset + 624);
       int frame = player->getActiveSpell().spell;
       spellSprite.setTextureRect(sf::IntRect(frame * 78, 78, 78, 78));
       app->draw(spellSprite);
 
       int spellFade = player->getPercentSpellDelay() * 78;
-      spellSprite.setPosition(20, 624 + 78 - spellFade);
+      spellSprite.setPosition(xOffset + 20, yOffset + 624 + 78 - spellFade);
       spellSprite.setTextureRect(sf::IntRect(frame * 78, 78 - spellFade, 78, spellFade));
       app->draw(spellSprite);
 
@@ -2362,7 +2382,7 @@ void WitchBlastGame::renderRunningGame()
       sf::Sprite mapSprite;
       mapSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS_EQUIP));
       mapSprite.setTextureRect(sf::IntRect(ITEM_WIDTH * 3, ITEM_HEIGHT * 4,  ITEM_WIDTH, ITEM_HEIGHT));
-      mapSprite.setPosition(582, 647);
+      mapSprite.setPosition(xOffset + 582, yOffset + 647);
       app->draw(mapSprite);
     }
     if (player->isEquiped(EQUIP_ALCOHOL))
@@ -2370,7 +2390,7 @@ void WitchBlastGame::renderRunningGame()
       sf::Sprite alcSprite;
       alcSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS_EQUIP));
       alcSprite.setTextureRect(sf::IntRect(ITEM_WIDTH * 4, ITEM_HEIGHT * 4,  ITEM_WIDTH, ITEM_HEIGHT));
-      alcSprite.setPosition(582, 680);
+      alcSprite.setPosition(xOffset + 582, yOffset + 680);
       app->draw(alcSprite);
     }
     if (player->isEquiped(EQUIP_LUCK))
@@ -2378,7 +2398,7 @@ void WitchBlastGame::renderRunningGame()
       sf::Sprite alcSprite;
       alcSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS_EQUIP));
       alcSprite.setTextureRect(sf::IntRect(ITEM_WIDTH * 5, ITEM_HEIGHT * 4,  ITEM_WIDTH, ITEM_HEIGHT));
-      alcSprite.setPosition(615, 680);
+      alcSprite.setPosition(xOffset + 615, yOffset + 680);
       app->draw(alcSprite);
     }
     if (player->isEquiped(EQUIP_FAIRY_POWDER))
@@ -2386,7 +2406,7 @@ void WitchBlastGame::renderRunningGame()
       sf::Sprite alcSprite;
       alcSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS_EQUIP));
       alcSprite.setTextureRect(sf::IntRect(ITEM_WIDTH * 6, ITEM_HEIGHT * 4,  ITEM_WIDTH, ITEM_HEIGHT));
-      alcSprite.setPosition(648, 680);
+      alcSprite.setPosition(xOffset + 648, yOffset + 680);
       app->draw(alcSprite);
     }
     // drawing the consumable
@@ -2394,7 +2414,7 @@ void WitchBlastGame::renderRunningGame()
     {
       sf::RectangleShape shadow(sf::Vector2f(70, 33));
       shadow.setFillColor(sf::Color(0, 0, 0, 128));
-      shadow.setPosition(sf::Vector2f(231, 614));
+      shadow.setPosition(sf::Vector2f(xOffset + 231, yOffset + 614));
       app->draw(shadow);
     }
     else
@@ -2408,7 +2428,7 @@ void WitchBlastGame::renderRunningGame()
       {
         sf::Sprite consSprite;
         consSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS));
-        consSprite.setPosition(161 + 36 * i, 615);
+        consSprite.setPosition(xOffset + 161 + 36 * i, yOffset + 615);
 
         if (item < FirstEquipItem && item >= ItemPotion01 + NUMBER_UNIDENTIFIED)
         {
@@ -2427,7 +2447,7 @@ void WitchBlastGame::renderRunningGame()
     {
       sf::Sprite divSprite;
       divSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_DIVINITY));
-      divSprite.setPosition(405, 616);
+      divSprite.setPosition(xOffset + 405, yOffset + 616);
       divSprite.setTextureRect(sf::IntRect(player->getDivinity().divinity * 48, 0, 48, 85));
       app->draw(divSprite);
 
@@ -2449,7 +2469,7 @@ void WitchBlastGame::renderRunningGame()
       else
         rectangle.setFillColor(sf::Color(100, 100, 200, 255));
 
-      rectangle.setPosition(sf::Vector2f(407, 692));
+      rectangle.setPosition(sf::Vector2f(xOffset + 407, yOffset + 692));
       rectangle.setSize(sf::Vector2f(45 * player->getDivinity().percentsToNextLevels, 8));
       app->draw(rectangle);
 
@@ -2487,7 +2507,7 @@ void WitchBlastGame::renderRunningGame()
         {
           sf::Sprite itemSprite;
           itemSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS_EQUIP));
-          itemSprite.setPosition(x + (n % 8) * 40, y + (n / 8) * 40);
+          itemSprite.setPosition(xOffset + x + (n % 8) * 40, yOffset + y + (n / 8) * 40);
           itemSprite.setTextureRect(sf::IntRect((i % 10) * 32, (i / 10) * 32, 32, 32));
           app->draw(itemSprite);
           n++;
@@ -2555,7 +2575,7 @@ void WitchBlastGame::renderRunningGame()
             int yPotion = 440 + 30 * iPotion;
             sf::Sprite itemSprite;
             itemSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS));
-            itemSprite.setPosition(xPotion, yPotion);
+            itemSprite.setPosition(xOffset + xPotion, yOffset + yPotion);
 
             if (currentPotion >= ItemPotion01 + NUMBER_UNIDENTIFIED )
             {
@@ -2717,14 +2737,14 @@ void WitchBlastGame::renderRunningGame()
 
     spriteScroll.setTexture(*ImageManager::getInstance().getImage(IMAGE_UI_ACHIEV));
     spriteScroll.setTextureRect(sf::IntRect(128 + 384 - opening, 0, opening, 64));
-    spriteScroll.setPosition(xPos + 384 - opening, yPos);
+    spriteScroll.setPosition(xOffset + xPos + 384 - opening, yOffset + yPos);
     app->draw(spriteScroll);
 
     if ((achievAge > 1.0f && achievAge < 2.0f) || achievAge > ACHIEVEMENT_DELAY_MAX - 1.0f)
       spriteScroll.setTextureRect(sf::IntRect(32 * ((int)(achievAge * 8) % 4), 0, 32, 64));
     else
       spriteScroll.setTextureRect(sf::IntRect(0, 0, 32, 64));
-    spriteScroll.setPosition(xPos + 394 - opening - 16, yPos);
+    spriteScroll.setPosition(xOffset + xPos + 394 - opening - 16, yOffset + yPos);
     app->draw(spriteScroll);
 
     if (achievAge > 2.0f && achievAge < ACHIEVEMENT_DELAY_MAX - 1.0f)
@@ -2734,7 +2754,7 @@ void WitchBlastGame::renderRunningGame()
       icon.setTextureRect(sf::IntRect( ((achievementsQueue.front().type + 1) % 10) * 64,
                                        ((achievementsQueue.front().type + 1) / 10) * 64, 64, 64));
 
-      icon.setPosition(xPos + 308, yPos + 9);
+      icon.setPosition(xOffset + xPos + 308, yOffset + yPos + 9);
       icon.setScale(0.7f, 0.7f);
       app->draw(icon);
       icon.setColor(sf::Color(255, 255, 255, 50 + 50 * cosf(getAbsolutTime() * 4)));
@@ -2822,7 +2842,7 @@ void WitchBlastGame::renderMessages()
     }
 
     uiSprites.msgBoxSprite.setTextureRect(sf::IntRect(0, 0, 970, dy + 2));
-    uiSprites.msgBoxSprite.setPosition(0, 600 - dy);
+    uiSprites.msgBoxSprite.setPosition(xOffset, yOffset + 600 - dy);
     app->draw(uiSprites.msgBoxSprite);
 
     std::stringstream ss;
@@ -2926,7 +2946,7 @@ void WitchBlastGame::renderDeathScreen(float x, float y)
 
   sf::Sprite rectangle;
   rectangle.setTexture(*ImageManager::getInstance().getImage(IMAGE_DEATH_CERTIFICATE));
-  rectangle.setPosition(x - 4, y - 4);
+  rectangle.setPosition(xOffset + x - 4, yOffset + y - 4);
   app->draw(rectangle);
 
   std::stringstream ss;
@@ -2938,7 +2958,7 @@ void WitchBlastGame::renderDeathScreen(float x, float y)
 
     sf::Sprite seal;
     seal.setTexture(*ImageManager::getInstance().getImage(IMAGE_WIN_SEAL));
-    seal.setPosition(x + 650, y + 50);
+    seal.setPosition(xOffset + x + 650, yOffset + y + 50);
     app->draw(seal);
   }
 
@@ -2978,7 +2998,7 @@ void WitchBlastGame::renderDeathScreen(float x, float y)
     {
       sf::Sprite itemSprite;
       itemSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ITEMS_EQUIP));
-      itemSprite.setPosition(x + 14 + n * 32, y + 183);
+      itemSprite.setPosition(xOffset + x + 14 + n * 32, yOffset + y + 183);
       itemSprite.setTextureRect(sf::IntRect((i % 10) * 32, (i / 10) * 32, 32, 32));
       app->draw(itemSprite);
       n++;
@@ -3507,8 +3527,8 @@ void WitchBlastGame::renderMenu()
   }
 
   app->draw(introScreenSprite);
-  if (titleSprite.getPosition().y > 160) titleSprite.move(0, -8);
-  else if (titleSprite.getPosition().y < 160) titleSprite.setPosition(SCREEN_WIDTH / 2 - 15, 160);
+  if (titleSprite.getPosition().y > 160 + yOffset ) titleSprite.move(0, -8);
+  else if (titleSprite.getPosition().y < 160 + yOffset) titleSprite.setPosition(xOffset + SCREEN_WIDTH / 2 - 15, yOffset + 160);
   app->draw(titleSprite);
 
   EntityManager::getInstance().render(app);
@@ -3578,7 +3598,7 @@ void WitchBlastGame::renderMenu()
         sf::Sprite fairySprite;
         fairySprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_FAIRY));
         fairySprite.setTextureRect(sf::IntRect( 48 * ((int)(20 *getAbsolutTime()) % 2), fairySpriteOffsetY, 48, 48));
-        fairySprite.setPosition(xAlign - 60, yTop - 10 + i * yStep + 5 * cos( 6 * getAbsolutTime()));
+        fairySprite.setPosition(xOffset + xAlign - 60, yOffset + yTop - 10 + i * yStep + 5 * cos( 6 * getAbsolutTime()));
         app->draw(fairySprite);
       }
       else itemColor = sf::Color(120, 120, 120, 255);
@@ -3631,7 +3651,7 @@ void WitchBlastGame::renderMenu()
         keysSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_KEYS_AZER));
       else
         keysSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_KEYS_QWER));
-      keysSprite.setPosition(xKeys, yKeys);
+      keysSprite.setPosition(xOffset + xKeys, yOffset + yKeys);
       app->draw(keysSprite);
 
       // legend
@@ -3655,7 +3675,7 @@ void WitchBlastGame::renderAchievements()
 {
   app->draw(introScreenSprite);
   if (titleSprite.getPosition().y > 160) titleSprite.move(0, -8);
-  else if (titleSprite.getPosition().y < 160) titleSprite.setPosition(SCREEN_WIDTH / 2 - 15, 180);
+  else if (titleSprite.getPosition().y < 160) titleSprite.setPosition(xOffset + SCREEN_WIDTH / 2 - 15, yOffset + 180);
   app->draw(titleSprite);
 
   // achievements
@@ -3666,7 +3686,7 @@ void WitchBlastGame::renderAchievements()
   if (menuAchIndex / 8 < ACHIEV_LINES)
   {
     sf::RectangleShape rectangle(sf::Vector2f(achWidth, achHeight));
-    rectangle.setPosition(x0 + (menuAchIndex % nbProLine) * (achWidth + xStep), y0 + (menuAchIndex / nbProLine) * (achHeight + yStep));
+    rectangle.setPosition(xOffset + x0 + (menuAchIndex % nbProLine) * (achWidth + xStep), yOffset + y0 + (menuAchIndex / nbProLine) * (achHeight + yStep));
     rectangle.setOutlineThickness(3);
     rectangle.setOutlineColor(sf::Color(50, 255, 50));
     app->draw(rectangle);
@@ -3678,7 +3698,7 @@ void WitchBlastGame::renderAchievements()
   for (int k : sortedAchievements)
   {
     int i = sortedAchievements[k];
-    sprite.setPosition(x0 + (k % nbProLine) * (achWidth + xStep), y0 + (k / nbProLine) * (achHeight + yStep));
+    sprite.setPosition(xOffset + x0 + (k % nbProLine) * (achWidth + xStep), yOffset + y0 + (k / nbProLine) * (achHeight + yStep));
     if (achievementState[i] == AchievementDone)
     {
       sprite.setTextureRect(sf::IntRect( ((i + 1) % 10) * achWidth, ((i + 1) / 10) * achHeight, achWidth, achHeight));
@@ -3738,8 +3758,8 @@ void WitchBlastGame::renderAchievements()
 void WitchBlastGame::renderCredits()
 {
   app->draw(introScreenSprite);
-  if (titleSprite.getPosition().y > 160) titleSprite.move(0, -8);
-  else if (titleSprite.getPosition().y < 160) titleSprite.setPosition(SCREEN_WIDTH / 2 - 15, 180);
+  if (titleSprite.getPosition().y > 160 + yOffset) titleSprite.move(0, -8);
+  else if (titleSprite.getPosition().y < 160 + yOffset ) titleSprite.setPosition(xOffset + SCREEN_WIDTH / 2 - 15, yOffset + 180);
   app->draw(titleSprite);
 
   // credits
@@ -3869,7 +3889,7 @@ void WitchBlastGame::renderScores(std::vector <StructScore> scoresToRender, std:
     {
       if (ii != EQUIP_BOSS_KEY && scoresToRender[i].equip[ii])
       {
-        itemSprite.setPosition(xEquip + n * dx, y0 + 22 + yStep * i);
+        itemSprite.setPosition(xOffset + xEquip + n * dx, yOffset + y0 + 22 + yStep * i);
         itemSprite.setTextureRect(sf::IntRect((ii % 10) * 32, (ii / 10) * 32, 32, 32));
         app->draw(itemSprite);
         n++;
@@ -3889,7 +3909,7 @@ void WitchBlastGame::renderScores(std::vector <StructScore> scoresToRender, std:
     {
       itemSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_WIN_SEAL_HOF));
       itemSprite.setTextureRect(sf::IntRect(0, 0, 48, 48));
-      itemSprite.setPosition(475, y0 + 20 + yStep * i);
+      itemSprite.setPosition(xOffset + 475, yOffset + y0 + 20 + yStep * i);
       app->draw(itemSprite);
     }
     else
@@ -3950,7 +3970,7 @@ void WitchBlastGame::renderInGameMenu()
         sf::Sprite fairySprite;
         fairySprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_FAIRY));
         fairySprite.setTextureRect(sf::IntRect( 48 * ((int)(8 *getAbsolutTime()) % 2), fairySpriteOffsetY, 48, 48));
-        fairySprite.setPosition(xAlign - 60, yAlign + i * 90 + 5 * cos( 6 * getAbsolutTime()));
+        fairySprite.setPosition(xOffset + xAlign - 60, yOffset + yAlign + i * 90 + 5 * cos( 6 * getAbsolutTime()));
         app->draw(fairySprite);
       }
       else itemColor = sf::Color(120, 120, 120, 255);
@@ -4620,7 +4640,7 @@ void WitchBlastGame::renderHudShots(sf::RenderTarget* app)
     if (i == 0 || player->getShotType(i) != ShotTypeStandard)
     {
       int type_shot = player->getShotType(i);
-      uiSprites.shotsSprite.setPosition(xHud + 55 * index, yHud);
+      uiSprites.shotsSprite.setPosition(xOffset + xHud + 55 * index, yOffset + yHud);
       if (index == player->getShotIndex())
       {
         uiSprites.shotsSprite.setTextureRect(sf::IntRect(0, 0,  48, 48));
@@ -4994,8 +5014,15 @@ void WitchBlastGame::generateMap()
     currentMap->randomize(currentMap->getRoomType());
 }
 
-void WitchBlastGame::write(std::string str, int size, float x, float y, int align, sf::Color color, sf::RenderTarget* app, int xShadow, int yShadow, int maxWidth)
+void WitchBlastGame::write(std::string str, int size, float x, float y, int align, sf::Color color, sf::RenderTarget* app, int xShadow, int yShadow, int maxWidth, bool relative)
 {
+  int xOff = 0;
+  int yOff = 0;
+  if(!relative){
+      xOff = xOffset;
+      yOff = yOffset;
+  }
+  
   myText.setString(str);
   myText.setString(sf::String::fromUtf8(str.begin(), str.end()));
   myText.setCharacterSize(size);
@@ -5017,12 +5044,12 @@ void WitchBlastGame::write(std::string str, int size, float x, float y, int alig
 
   if (xShadow != 0 && yShadow != 0)
   {
-    myText.setPosition(xFont + xShadow, y + yShadow);
+    myText.setPosition(xOff + xFont + xShadow, yOff + y + yShadow);
     myText.setColor(sf::Color(0, 0, 0, 255));
     app->draw(myText);
   }
 
-  myText.setPosition(xFont, y);
+  myText.setPosition(xOff + xFont, yOff + y);
   myText.setColor(color);
   app->draw(myText);
 }
@@ -6917,6 +6944,8 @@ void WitchBlastGame::renderPlayer(float x, float y,
                                   bool equip[NUMBER_EQUIP_ITEMS], int shotType,
                                   int frame, int spriteDy)
 {
+   x+=xOffset;
+   y+=yOffset;
   bool isMirroring = false;
   sf::Sprite sprite;
 

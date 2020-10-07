@@ -16,6 +16,7 @@
 -{vIncl}=
 -I ../ 
 -I {pSFML}include/
+-I {pSrc}
 >
 ;Build Witch Blast
 -c {pSrc} -o {pObj_WB}witchblast/

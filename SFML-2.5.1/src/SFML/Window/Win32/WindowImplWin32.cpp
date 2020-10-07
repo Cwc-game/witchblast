@@ -130,7 +130,7 @@ namespace sf
 namespace priv
 {
 ////////////////////////////////////////////////////////////
-WindowImplWin32::WindowImplWin32(WindowHandle handle) :
+WindowImplWin32::WindowImplWin32(Window* _parent, WindowHandle handle) :
 m_handle          (handle),
 m_callback        (0),
 m_cursorVisible   (true), // might need to call GetCursorInfo
@@ -163,7 +163,7 @@ m_cursorGrabbed   (false)
 
 
 ////////////////////////////////////////////////////////////
-WindowImplWin32::WindowImplWin32(VideoMode mode, const String& title, Uint32 style, const ContextSettings& /*settings*/) :
+WindowImplWin32::WindowImplWin32(Window* _parent, VideoMode mode, const String& title, Uint32 style, const ContextSettings& /*settings*/) :
 m_handle          (NULL),
 m_callback        (0),
 m_cursorVisible   (true), // might need to call GetCursorInfo

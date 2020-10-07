@@ -70,7 +70,7 @@ public:
     /// \param handle Platform-specific handle of the control
     ///
     ////////////////////////////////////////////////////////////
-    WindowImplCocoa(WindowHandle handle);
+    WindowImplCocoa(Window* _parent, WindowHandle handle);
 
     ////////////////////////////////////////////////////////////
     /// \brief Create the window implementation
@@ -81,7 +81,7 @@ public:
     /// \param settings Additional settings for the underlying OpenGL context
     ///
     ////////////////////////////////////////////////////////////
-    WindowImplCocoa(VideoMode mode, const String& title, unsigned long style, const ContextSettings& settings);
+    WindowImplCocoa(Window* _parent, VideoMode mode, const String& title, unsigned long style, const ContextSettings& settings);
 
     ////////////////////////////////////////////////////////////
     /// \brief Destructor

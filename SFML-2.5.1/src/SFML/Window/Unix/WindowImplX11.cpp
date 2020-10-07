@@ -480,7 +480,7 @@ namespace sf
 namespace priv
 {
 ////////////////////////////////////////////////////////////
-WindowImplX11::WindowImplX11(WindowHandle handle) :
+WindowImplX11::WindowImplX11(Window* _parent, WindowHandle handle) :
 m_window         (0),
 m_screen         (0),
 m_inputMethod    (NULL),
@@ -529,7 +529,7 @@ m_lastInputTime  (0)
 
 
 ////////////////////////////////////////////////////////////
-WindowImplX11::WindowImplX11(VideoMode mode, const String& title, unsigned long style, const ContextSettings& settings) :
+WindowImplX11::WindowImplX11(Window* _parent, VideoMode mode, const String& title, unsigned long style, const ContextSettings& settings) :
 m_window         (0),
 m_screen         (0),
 m_inputMethod    (NULL),
