@@ -526,6 +526,7 @@ WitchBlastGame::WitchBlastGame()
   uiSprites.numberSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_SCORE_FONT));
 
   introScreenSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_INTRO));
+  introScreenSprite.setPosition(xOffset, yOffset);
   titleSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_TITLE));
   titleSprite.setOrigin(titleSprite.getTextureRect().width / 2, titleSprite.getTextureRect().height / 2);
 

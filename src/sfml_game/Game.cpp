@@ -30,6 +30,10 @@ void Game::create(int screenWidth, int screenHeight, std::string windowsTitle, b
 {
   this->screenWidth = screenWidth+500;
   this->screenHeight = screenHeight;
+ // this->screenWidth = sf::VideoMode::getDesktopMode().width;
+//  this->screenHeight = sf::VideoMode::getDesktopMode().height;
+
+//sf::VideoMode::getDesktopMode().width
 
   if (fullScreen){
     app = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight), windowsTitle, sf::Style::Fullscreen);
