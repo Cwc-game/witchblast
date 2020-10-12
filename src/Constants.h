@@ -47,7 +47,7 @@ const int TILE_WIDTH = 64;
 const int TILE_HEIGHT = 64;
 
 // Tile map offset
-const int OFFSET_X = 305;
+const int OFFSET_X = 5;
 const int OFFSET_Y = 5;
 
 const int MAP_WIDTH = 15;

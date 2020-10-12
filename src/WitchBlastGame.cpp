@@ -327,17 +327,18 @@ WitchBlastGame::WitchBlastGame()
     app->setFramerateLimit(60);
   }
 
+  float offset = 0;
   // Fullscreen ?
   if (parameters.fullscreen)
   {
-    create(SCREEN_WIDTH, SCREEN_HEIGHT, APP_NAME + " V" + APP_VERSION, true, parameters.vsync);
+	offset = create(SCREEN_WIDTH, SCREEN_HEIGHT, APP_NAME + " V" + APP_VERSION, true, parameters.vsync);
     sf::View view = app->getDefaultView();
     view = getFullScreenLetterboxView( view, SCREEN_WIDTH, SCREEN_HEIGHT );
     app->setView(view);
   }
   else
   {
-    create(SCREEN_WIDTH, SCREEN_HEIGHT, APP_NAME + " V" + APP_VERSION, false, parameters.vsync);
+    offset = create(SCREEN_WIDTH, SCREEN_HEIGHT, APP_NAME + " V" + APP_VERSION, false, parameters.vsync);
   }
 
   // init current music
@@ -478,7 +479,7 @@ WitchBlastGame::WitchBlastGame()
   if (parameters.fullscreen) enableAA(true);
 
   // game main client position in the UI
-  xOffset = OFFSET_X;
+  xOffset = OFFSET_X + offset;
   yOffset = OFFSET_Y;
 
   SoundManager::getInstance().setVolume(parameters.soundVolume);

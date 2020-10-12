@@ -26,14 +26,24 @@ Game::Game()
 {
 }
 
-void Game::create(int screenWidth, int screenHeight, std::string windowsTitle, bool fullScreen, bool vsync)
+float Game::create(int screenWidth, int screenHeight, std::string windowsTitle, bool fullScreen, bool vsync)
 {
-  this->screenWidth = screenWidth+500;
+  this->screenWidth = screenWidth;
   this->screenHeight = screenHeight;
- // this->screenWidth = sf::VideoMode::getDesktopMode().width;
-//  this->screenHeight = sf::VideoMode::getDesktopMode().height;
 
-//sf::VideoMode::getDesktopMode().width
+  float offset = 0;
+#if defined(SFML_SYSTEM_ANDROID)
+  float ratio = float(sf::VideoMode::getDesktopMode().width) / float(sf::VideoMode::getDesktopMode().height);
+  this->screenWidth = screenHeight * ratio;
+  //offset = 
+  sf::err() << " ratio " << ratio << std::endl;
+#endif
+
+  sf::err() << " fullScreen " << fullScreen << std::endl;
+  sf::err() << " this->screenWidth "  << this->screenWidth << std::endl;
+  sf::err() << " this->screenHeight " << this->screenHeight << std::endl;
+  sf::err() << " sf::VideoMode::getDesktopMode().width " << sf::VideoMode::getDesktopMode().width  << std::endl;
+  sf::err() << " sf::VideoMode::getDesktopMode().height " << sf::VideoMode::getDesktopMode().height << std::endl;
 
   if (fullScreen){
     app = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight), windowsTitle, sf::Style::Fullscreen);
@@ -41,9 +51,30 @@ void Game::create(int screenWidth, int screenHeight, std::string windowsTitle, b
     app = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight), windowsTitle);
   }
 
+  sf::err() << " app->getDefaultView.getSize.x " << app->getDefaultView().getSize().x << std::endl;
+  sf::err() << " app->getDefaultView.getSize.y " << app->getDefaultView().getSize().y << std::endl;
+  //app->getDefaultView.getSize.width;
+
+#if defined(SFML_SYSTEM_ANDROID)
+/*
+ float offratio = float(app->getDefaultView().getSize().y)  / float(screenHeight);
+ float realWidth = float(screenWidth) * offratio;
+ offset = (realWidth - float(screenWidth))/ 2.0;
+*/
+  float diff = float(app->getDefaultView().getSize().x) - float(screenWidth);
+  offset = diff / 2.0;
+
+// sf::err() << " offratio " << offratio << std::endl;
+ sf::err() << " offset " << offset << std::endl;
+
+#endif
+
+
+
   if (vsync) app->setVerticalSyncEnabled(true);
   else app->setFramerateLimit(60);
   
+  return offset;
 }
 
 Game::~Game()
