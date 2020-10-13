@@ -2110,7 +2110,10 @@ void WitchBlastGame::renderRunningGame()
   EntityManager::getInstance().sortByZ();
   getCurrentMapEntity()->computeBoltParticulesVertices();
 
+
+
 //if (isPressing(0, KeyUp, false)){ xGame[xGameTypeShake].active = true;}//Test
+
 
   if (!isPlayerAlive)
   {
@@ -2186,7 +2189,30 @@ void WitchBlastGame::renderRunningGame()
     sf::View view = app->getView();
     sf::View viewSave = app->getView();
 
-    view.move(-xOffset, -yOffset);
+	float zoom = 0.5f;
+	view.zoom(zoom);
+
+	//here
+
+	float xScene = -xOffset + player->getX() - float(SCREEN_WIDTH) / 2.0;
+	float yScene = -yOffset + player->getY() - float(SCREEN_HEIGHT) / 2.0;
+	float left = -float(SCREEN_WIDTH)  / 2.0 - xOffset;
+	float top  = -float(SCREEN_HEIGHT) / 2.0 - yOffset;
+	if(xScene  < left * zoom){
+		xScene = left * zoom;
+	}
+	if (yScene < top * zoom) {
+		yScene = top * zoom;
+	}
+	if (xScene > (left+ float(GAME_WIDTH)) * zoom) {
+		xScene = (left + float(GAME_WIDTH)) * zoom;
+	}
+	if (yScene > (top + float(GAME_HEIGHT)) * zoom) {
+		yScene = (top + float(GAME_HEIGHT)) * zoom;
+	}
+
+	
+    view.move(xScene, yScene);
     app->setView(view);
 
     renderGame();
@@ -7687,7 +7713,7 @@ bool WitchBlastGame::getPressingState(int p, inputKeyEnum k)
 			if (i == 0) {
 				//sf::err() << " xTouch " << xTouch << std::endl;
 				//sf::err() << " yTouch " << yTouch << std::endl;
-				sf::err() << " ratio " << ratio << std::endl;
+				//sf::err() << " ratio " << ratio << std::endl;
 				/*
 				sf::err() << " sf::Touch::getPosition(i).x " << xTouch << std::endl;
 				sf::err() << " sf::Touch::getPosition(i).y " << sf::Touch::getPosition(i).y << std::endl;
