@@ -636,6 +636,7 @@ private:
   } lifeBar;
 
   float xOffset, yOffset;     /*!< Main game client position in the GUI */
+  float xCtrl_Pad, yCtrl_Pad;
 
   sf::Music music;            /*!< Current game music */
 

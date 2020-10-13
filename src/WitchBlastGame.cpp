@@ -341,6 +341,12 @@ WitchBlastGame::WitchBlastGame()
     offset = create(SCREEN_WIDTH, SCREEN_HEIGHT, APP_NAME + " V" + APP_VERSION, false, parameters.vsync);
   }
 
+  // game main client position in the UI
+  xOffset = OFFSET_X + offset;
+  yOffset = OFFSET_Y;
+  xCtrl_Pad = offset / 2.0;
+  yCtrl_Pad = SCREEN_HEIGHT / 2.0;
+
   // init current music
   currentStandardMusic = 0;
 
@@ -477,10 +483,6 @@ WitchBlastGame::WitchBlastGame()
 
   // AA in fullscreen
   if (parameters.fullscreen) enableAA(true);
-
-  // game main client position in the UI
-  xOffset = OFFSET_X + offset;
-  yOffset = OFFSET_Y;
 
   SoundManager::getInstance().setVolume(parameters.soundVolume);
   for (const char *const filename : sounds)
@@ -2336,13 +2338,12 @@ void WitchBlastGame::renderRunningGame()
 
 
     /////////////////////////////////////////
+	//here
     sf::Sprite arrowpadSprite;
     arrowpadSprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_ARROW_PAD));
-    arrowpadSprite.setPosition(xOffset + -10, yOffset + 319);
+    arrowpadSprite.setPosition(xCtrl_Pad - arrowpadSprite.getTextureRect().width / 2, yCtrl_Pad - arrowpadSprite.getTextureRect().height / 2);
     app->draw(arrowpadSprite);
     /////////////////////////////////////////
-
-
 
 
     // mana
@@ -7657,14 +7658,53 @@ bool WitchBlastGame::getPressingState(int p, inputKeyEnum k)
     if (sf::Keyboard::isKeyPressed(input[k])) return true;
   }
 
+
+  
+//	  float ratio = float(app->getDefaultView().getSize().x) / float(SCREEN_WIDTH);
+  //float ratio = float(SCREEN_WIDTH) / float(sf::VideoMode::getDesktopMode().width);
+  float ratio = float(app->getDefaultView().getSize().x) / float(sf::VideoMode::getDesktopMode().width);
+
+ 
+	//here
     for(int i =0; i< 6; i++){ //6 fingers?! ;)
         if(sf::Touch::isDown(i)){
+			app->mapPixelToCoords(sf::Touch::getPosition(0)).x;
+		  	//window.mapPixelToCoords(sf::Touch::getPosition(0, window));
 
-            if (k == KeyLeft && sf::Touch::getPosition(i).x < 100) return true;
-            if (k == KeyRight && sf::Touch::getPosition(i).x > 400) return true;
-            if (k == KeyUp && sf::Touch::getPosition(i).y < 100) return true;
-            if (k == KeyDown && sf::Touch::getPosition(i).y > 200) return true;
+		//	float xTouch = app->mapPixelToCoords(sf::Touch::getPosition(i)).x * ratio;
+		//	float yTouch = app->mapPixelToCoords(sf::Touch::getPosition(i)).y * ratio;
+		
 
+			float xTouch = sf::Touch::getPosition(i).x * ratio;
+			float yTouch = sf::Touch::getPosition(i).y * ratio;
+
+			float xDiff = xTouch - xCtrl_Pad;
+			float yDiff = yTouch - yCtrl_Pad;
+			float dist_Ctrl_Pad = sqrt(xDiff*xDiff + yDiff*yDiff);
+			float dead_zone = 20;
+
+			
+			if (i == 0) {
+				//sf::err() << " xTouch " << xTouch << std::endl;
+				//sf::err() << " yTouch " << yTouch << std::endl;
+				sf::err() << " ratio " << ratio << std::endl;
+				/*
+				sf::err() << " sf::Touch::getPosition(i).x " << xTouch << std::endl;
+				sf::err() << " sf::Touch::getPosition(i).y " << sf::Touch::getPosition(i).y << std::endl;
+
+				sf::err() << " xDiff " << xDiff << std::endl;
+				sf::err() << " yDiff " << yDiff << std::endl;
+				sf::err() << " xCtrl_Pad " << xCtrl_Pad << std::endl;
+				sf::err() << " yCtrl_Pad " << yCtrl_Pad << std::endl;
+				sf::err() << " dist_Ctrl_Pad " << dist_Ctrl_Pad << std::endl;**/
+			}
+
+			if(dist_Ctrl_Pad > 20 && dist_Ctrl_Pad < 150){
+				if (k == KeyLeft  && xTouch  <  xCtrl_Pad - dead_zone) return true;
+				if (k == KeyRight && xTouch >  xCtrl_Pad + dead_zone) return true;
+				if (k == KeyUp    && yTouch  <  yCtrl_Pad - dead_zone) return true;
+				if (k == KeyDown  && yTouch  >  yCtrl_Pad + dead_zone) return true;
+			}
 
             if (k == KeyFireDown && sf::Touch::getPosition(i).y > 200  &&  sf::Touch::getPosition(i).x > 400) return true;
 
